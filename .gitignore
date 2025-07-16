@@ -1,0 +1,14 @@
+# Build files
+/build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Executables
+motor_health_monitor
+
+# Editor-specific
+*.swp
+*.vscode/
+.DS_Store
