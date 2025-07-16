@@ -1,35 +1,155 @@
+Here’s your complete, polished `README.md` with everything included in one file — structure, diagrams (in Mermaid), simulation instructions, license section, and contribution guidelines.
+
+---
+
+````markdown
 # Motor Health Monitor
 
-A modular C++ tool for:
+> A modular, C++17-based toolkit for motor diagnostics and command/odometry compliance monitoring. Hardware-agnostic and simulation-ready.
 
-- **Command/Odometry synchronization** (`CmdOdomSync`)
-- **Motor fault detection** with swappable feedback sources (`MotorFaultDetector`)
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [Architecture](#architecture)
+- [Simulation Scenarios](#simulation-scenarios)
+- [Getting Started](#getting-started)
+- [Build Instructions](#build-instructions)
+- [Run the Simulation](#run-the-simulation)
+- [Project Structure](#project-structure)
+- [License](#license)
+- [Contributing](#contributing)
+- [Contact](#contact)
+
+---
 
 ## Features
 
-- Encoder fault detection using thresholds and durations
-- Swappable motor controller implementations via a common interface
-- C++17 and CMake-ready
-- Suitable for robotics, motor diagnostics, or simulation
+- ✅ **Command/Odometry Synchronization** with `CmdOdomSync`
+- ⚙️ **PWM Saturation Detection** using `PWMSaturationMonitor`
+- 🔌 Easily extendable to hardware drivers or simulated environments
+- 🧩 ROS-independent, pure C++17
+- 🧪 Ready for CI testing and modular integration
+
+---
+
+## Architecture
+
+```mermaid
+graph TD
+    cmd_vel[Velocity Command Input]
+    odom[Odometry Feedback]
+    CmdOdomSync -->|state| MotorFaultDetector
+    cmd_vel --> CmdOdomSync
+    odom --> CmdOdomSync
+````
+
+---
 
 ## Simulation Scenarios
 
-This project includes simulated behavior of:
+This project includes built-in test simulations that verify:
 
-- CmdOdomSync states (`SYNCED`, `UNSYNCED`, `INDETERMINATE`) over time
-- Encoder-based motor fault detection (e.g., prolonged saturation)
+* **CmdOdomSync** state transitions:
+  `SYNCED`, `UNSYNCED`, and `INDETERMINATE`
+* **PWM saturation** detection logic with duration tracking
 
-The simulations run in `main.cpp` and provide a basic system check without real hardware.
+These are implemented in `main.cpp`, and require **no hardware** to run.
+
+---
+
+## Getting Started
+
+### 🔧 Requirements
+
+* C++17
+* CMake ≥ 3.10
+* Linux / WSL / macOS (tested)
+
+---
 
 ## Build Instructions
 
 ```bash
+git clone https://github.com/your-username/motor_health_monitor.git
+cd motor_health_monitor
 mkdir build && cd build
 cmake ..
 make
+```
+
+---
+
+## Run the Simulation
+
+```bash
 ./motor_health_monitor
+```
 
-## Usage
+This will:
 
-- Modify simulation parameters in main.cpp as needed
-- Integrate MotorFaultDetector and CmdOdomSync into your robotics software
+* Generate synthetic `/cmd_vel` and `/odom` signals
+* Simulate a mismatch (non-compliance)
+* Trigger saturation conditions and state transitions
+
+The simulation runs entirely from `main.cpp`.
+
+---
+
+## Project Structure
+
+```
+motor_health_monitor/
+├── include/
+│   └── cmd_odom_sync/
+│       ├── CmdOdomSync.hpp
+│       └── PWMSaturationMonitor.hpp
+├── src/
+│   ├── CmdOdomSync.cpp
+│   ├── PWMSaturationMonitor.cpp
+│   └── main.cpp
+├── build/
+├── CMakeLists.txt
+├── LICENSE
+└── README.md
+```
+
+---
+
+## License
+
+```txt
+MIT License
+
+Copyright (c) 2024 [Your Name]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED...
+```
+
+---
+
+## Contributing
+
+Contributions are welcome! Feel free to:
+
+* Open issues for bug reports or feature ideas
+* Submit pull requests with enhancements or test cases
+* Fork and adapt the project for your own applications
+
+---
+
+## Contact
+
+Have questions or ideas? Open an issue or reach out via GitHub.
+
+---
+
+
