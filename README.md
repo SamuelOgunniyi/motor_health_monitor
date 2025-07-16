@@ -39,14 +39,7 @@ Here’s your complete, polished `README.md` with everything included in one fil
 
 ## Architecture
 
-```mermaid
-graph TD
-    cmd_vel[Velocity Command Input]
-    odom[Odometry Feedback]
-    CmdOdomSync -->|state| MotorFaultDetector
-    cmd_vel --> CmdOdomSync
-    odom --> CmdOdomSync
-````
+![System Architecture](docs/architecture.png)
 
 ---
 
@@ -68,7 +61,7 @@ These are implemented in `main.cpp`, and require **no hardware** to run.
 
 * C++17
 * CMake ≥ 3.10
-* Linux / WSL / macOS (tested)
+* Linux / WSL (tested)
 
 ---
 
