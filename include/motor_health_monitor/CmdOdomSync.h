@@ -19,6 +19,9 @@ struct MotionSignal  {
     double timestamp = 0.0;  // Unix time (seconds)
 };
 
+using SetpointReading = MotionSignal;
+using OdometryReading = MotionSignal;
+
 struct SyncConfig {
     bool use_averaging = true;
     double error_threshold = 0.1;
@@ -41,7 +44,8 @@ private:
     SyncConfig config_;
     OdomSyncState state_;
 
-    MotionSignal  latest_setpoint_, prev_setpoint_, latest_odom_;
+    SetpointReading  latest_setpoint_, prev_setpoint_;
+    OdometryReading  latest_odom_;
     std::deque<MotionSignal > setpoint_history_, odom_history_;
 
     double spike_start_time_;
