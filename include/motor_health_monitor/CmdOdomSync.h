@@ -26,7 +26,7 @@ struct SyncConfig {
     bool use_averaging = true;
     double error_threshold = 0.1;
     double spike_threshold = 0.8;
-    double response_timeout = 0.5;  // seconds
+    double response_timeout = 0.1;  // seconds
     size_t sample_window = 5;
 };
 

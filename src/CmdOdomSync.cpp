@@ -1,8 +1,9 @@
 #include "motor_health_monitor/CmdOdomSync.h"
+#include <iostream>
 
 CmdOdomSync::CmdOdomSync(const SyncConfig& config)
     : config_(config),
-      state_(OdomSyncState::INDETERMINATE),
+      state_(OdomSyncState::SYNCED),
       spike_start_time_(-1.0) {}
 
 void CmdOdomSync::update(double setpoint, double setpoint_time,
@@ -11,6 +12,7 @@ void CmdOdomSync::update(double setpoint, double setpoint_time,
     prev_setpoint_ = latest_setpoint_;
     latest_setpoint_ = {setpoint, setpoint_time};
     latest_odom_ = {odometry, odometry_time};
+    bool dontComputeError = false;
 
     if (config_.use_averaging) {
         setpoint_history_.push_back(latest_setpoint_);
@@ -31,8 +33,9 @@ void CmdOdomSync::update(double setpoint, double setpoint_time,
     }
 
     spike_start_time_ = -1.0; // reset spike start time when settled
-
+       
     double error = computeError();
+    
     if (std::isnan(error)) {
         state_ = OdomSyncState::INDETERMINATE;
         return;
