@@ -1,6 +1,7 @@
-// MotorController.h
-#ifndef MOTOR_CONTROLLER_H
-#define MOTOR_CONTROLLER_H
+#pragma once
+
+namespace motor_health_monitor
+{
 
 class MotorController {
 public:
@@ -13,5 +14,5 @@ public:
     virtual double getFeedbackValue() const = 0;
 };
 
-#endif // MOTOR_CONTROLLER_H
+} // namespace motor_health_monitor
 

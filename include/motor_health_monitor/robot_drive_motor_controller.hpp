@@ -1,7 +1,9 @@
-#ifndef ROBOT_DRIVE_MOTOR_CONTROLLER_H
-#define ROBOT_DRIVE_MOTOR_CONTROLLER_H
+#pragma once
 
-#include "MotorController.h"
+#include "motor_controller.hpp"
+
+namespace motor_health_monitor
+{
 
 class RobotDriveMotorController  : public MotorController {
 public:
@@ -19,4 +21,4 @@ private:
     double value_;
 };
 
-#endif // ROBOT_DRIVE_MOTOR_CONTROLLER_H
+}

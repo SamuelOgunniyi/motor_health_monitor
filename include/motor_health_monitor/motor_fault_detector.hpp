@@ -1,9 +1,10 @@
-// MotorFaultDetector.h
-#ifndef MOTOR_FAULT_DETECTOR_H
-#define MOTOR_FAULT_DETECTOR_H
+#pragma once
 
-#include "MotorController.h"
+#include "motor_controller.hpp"
 #include <cmath>
+
+namespace motor_health_monitor
+{
 
 enum class MotorFaultState {
     FAULT,
@@ -24,6 +25,13 @@ public:
           timer_started_(false),
           start_time_(-1.0) {}
 
+    MotorFaultDetector(const MotorFaultDetector&) = delete;
+    MotorFaultDetector& operator=(const MotorFaultDetector&) = delete;
+    MotorFaultDetector(MotorFaultDetector&&) = delete;
+    MotorFaultDetector& operator=(MotorFaultDetector&&) = delete;
+
+    ~MotorFaultDetector() = default;
+
     void update(double current_time) {
         double value = motor_controller_.getFeedbackValue();
 
@@ -43,8 +51,12 @@ public:
         }
     }
 
-    MotorFaultState getState() const {
+    MotorFaultState getState() const noexcept {
         return state_;
+    }
+
+    void setConfig(const FaultDetectionConfig& config) noexcept {
+        config_ = config;
     }
 
 private:
@@ -55,4 +67,4 @@ private:
     double start_time_;
 };
 
-#endif // MOTOR_FAULT_DETECTOR_H
+} // namespace motor_health_monitor
