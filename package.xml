@@ -1,17 +1,25 @@
 <package format="3">
   <name>motor_health_monitor</name>
   <version>0.1.0</version>
-  <description>Motor health and fault monitoring</description>
+  <description>
+    Generic motor health monitoring system for ROS 2 robots.
+    Supports pluggable motor controllers with auto-subscription and 
+    configurable fault detection. Designed for autonomous mobile robots
+    requiring robust motor health monitoring.
+  </description>
 
-  <maintainer email="samogunniyi@gmail.com">Your Name</maintainer>
+  <maintainer email="samogunniyi@gmail.com">Samuel Ogunniyi</maintainer>
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <depend>rclcpp</depend>
+  <depend>rclcpp_lifecycle</depend>
   <depend>rclcpp_components</depend>
+  <depend>lifecycle_msgs</depend>
   <depend>geometry_msgs</depend>
   <depend>nav_msgs</depend>
+  <depend>std_msgs</depend>
   <depend>diagnostic_msgs</depend>
 
   <test_depend>ament_lint_auto</test_depend>

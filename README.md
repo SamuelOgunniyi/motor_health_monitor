@@ -1,6 +1,9 @@
 # Motor Health Monitor
 
-A ROS 2 C++17 package for monitoring motor health and detecting faults by analyzing the synchronization between command velocities and odometry feedback.
+A ROS 2 C++17 package for monitoring motor health and detecting faults through configurable motor controller feedback analysis and command/odometry synchronization detection.
+
+**Author:** Samuel Ogunniyi  
+**Maintainer:** Samuel Ogunniyi (samogunniyi@gmail.com)
 
 ![License](https://img.shields.io/badge/license-Apache--2.0-blue)
 ![C++](https://img.shields.io/badge/C++-17-blue)
@@ -8,8 +11,10 @@ A ROS 2 C++17 package for monitoring motor health and detecting faults by analyz
 ## Features
 
 - ✅ **Command/Odometry Synchronization Detection** - Monitors sync state between commanded and actual velocities
-- 🔍 **Motor Fault Detection** - Detects motor faults when velocity error exceeds threshold for specified duration
-- 🧩 **ROS 2 Component Architecture** - Built as a composable node using `rclcpp_components`
+- 🔍 **Generic Motor Fault Detection** - Configurable threshold-based fault detection for any motor feedback type (PWM, current, temperature, etc.)
+- 🔌 **Pluggable Motor Controllers** - Factory pattern allows custom motor controller implementations via configuration
+- 🔄 **Auto-Subscription with Topic Introspection** - Controllers automatically detect and subscribe to their message types
+- 🧩 **ROS 2 Component Architecture** - Built as a composable lifecycle node using `rclcpp_components`
 - 🧪 **Comprehensive Unit Tests** - Full test coverage with Google Test
 - 🔒 **Memory Safe & Thread Safe** - Follows modern C++17 best practices with proper ownership semantics
 - 📊 **Diagnostic Integration** - Publishes diagnostic messages compatible with ROS 2 diagnostic aggregator
@@ -20,10 +25,107 @@ A ROS 2 C++17 package for monitoring motor health and detecting faults by analyz
 
 The package consists of several key components:
 
-- **MotorHealthNode** - Main ROS 2 node that subscribes to `cmd_vel` and `odom` topics
+- **MotorHealthNode** - Main ROS 2 lifecycle node that orchestrates monitoring systems
 - **CmdOdomSync** - Detects synchronization state between command and odometry streams
-- **MotorFaultDetector** - Monitors motor controller feedback and detects faults based on configurable thresholds
-- **VelocityDiffController** - Computes velocity difference for fault detection
+- **MotorFaultDetector** - Generic threshold-based fault detector with debouncing (works with any motor feedback type)
+- **MotorController** - Abstract interface for motor controller implementations
+- **MotorControllerFactory** - Factory pattern for pluggable motor controller types
+- **RobotDriveMotorController** - Example implementation with auto-subscription and topic introspection
+
+## How It Works
+
+### Overview
+
+The Motor Health Monitor continuously compares **commanded velocities** (what you want the robot to do) with **actual velocities** (what the robot is actually doing based on odometry) to detect motor faults and synchronization issues.
+
+### Data Flow
+
+```
+/cmd_vel (Twist) ──────────────┐
+                               ├──> MotorHealthNode ──> /diagnostics (DiagnosticArray)
+/odom (Odometry) ──────────────┤
+                               │
+/motor_pwm (Float64) ──────────┘
+  (or custom topic)
+```
+
+1. **Data Collection**: The node subscribes to:
+   - `/cmd_vel` - Commanded velocity (what the control system wants)
+   - `/odom` - Actual velocity from odometry (what the robot is actually doing)
+   - Motor feedback topic (configurable, e.g., `/motor_pwm`) - Hardware-level motor feedback
+
+2. **Processing Loop** (runs at configurable rate, default 100ms):
+   - Stores latest messages (thread-safe)
+   - **Process 1**: Command/Odometry synchronization check
+   - **Process 2**: Motor fault detection from controller feedback
+   - Publishes diagnostic status
+
+### Two Monitoring Systems
+
+#### 1. Command/Odometry Synchronization (`CmdOdomSync`)
+
+Detects if commanded and actual velocities are synchronized:
+
+- **SYNCED**: Velocities match within tolerance (default: ±0.05 m/s)
+- **UNSYNCED**: Velocities differ beyond tolerance
+- **INDETERMINATE**: Invalid data (NaN or Inf values)
+
+**Use case**: Detects control system issues, communication delays, or sensor problems.
+
+#### 2. Motor Fault Detection (`MotorFaultDetector`)
+
+Generic threshold-based fault detection with debouncing. Works with **any motor controller feedback type**:
+
+- Reads feedback value from `MotorController` (PWM, current, temperature, etc.)
+- Checks if threshold is exceeded based on threshold type:
+  - **Absolute Value**: `|value| >= threshold` (for PWM, bidirectional signals)
+  - **Upper Limit**: `value >= threshold` (for current, temperature max limits)
+  - **Lower Limit**: `value <= threshold` (for voltage minimums)
+- If threshold exceeded for duration (default: 0.2s) → **FAULT**
+- Timer resets if value returns to normal
+- Prevents false positives from brief spikes
+
+**Use cases**:
+- PWM saturation detection (motor at max output)
+- Current overload detection
+- Temperature monitoring
+- Voltage monitoring
+- Any numeric motor feedback signal
+
+### Lifecycle States
+
+As a lifecycle node, the MotorHealthNode follows ROS 2 lifecycle state machine:
+
+- **unconfigured** → `configure` → **inactive** → `activate` → **active**
+- **active** → `deactivate` → **inactive** → `cleanup` → **unconfigured**
+
+**Behavior by state:**
+- **unconfigured**: Node created but not initialized
+- **inactive**: Configured, subscriptions active, but not processing
+- **active**: Fully operational, processing data and publishing diagnostics
+- Processing only occurs when in **active** state
+
+### Diagnostic Output
+
+The node publishes to `/diagnostics` with:
+
+- **Status Level**:
+  - `OK` - Motor healthy (no fault detected)
+  - `ERROR` - Motor fault detected (velocity error sustained beyond threshold)
+- **Status Message**: Human-readable description
+- **Hardware ID**: Identifies which motor is being monitored
+- **Timestamp**: When the status was computed
+
+### Example Scenarios
+
+**Normal Operation:**
+- Command: 1.0 m/s, Odometry: 1.0 m/s → Difference: 0.0 → Status: `OK`
+
+**Sync Issue:**
+- Command: 1.0 m/s, Odometry: 0.3 m/s → Difference: 0.7 → Status: `OK` (if brief) or `ERROR` (if sustained)
+
+**Motor Fault:**
+- Command: 1.0 m/s, Odometry: 0.0 m/s → Difference: 1.0 → After 0.2s → Status: `ERROR`
 
 ## Requirements
 
@@ -58,11 +160,30 @@ colcon build --cmake-args -DBUILD_TESTING=ON --packages-select motor_health_moni
 ros2 launch motor_health_monitor motor_health.launch.py
 ```
 
-### Run as Component
+**Note:** This is a lifecycle node. After launching, you need to configure and activate it:
 
 ```bash
-ros2 run rclcpp_components component_container
-ros2 component load /ComponentManager motor_health_monitor motor_health_monitor::MotorHealthNode
+# Option 1: Use the helper script
+./scripts/manage_lifecycle.sh start
+
+# Option 2: Manual lifecycle commands
+ros2 lifecycle set /motor_health_monitor configure
+ros2 lifecycle set /motor_health_monitor activate
+
+# Check state
+ros2 lifecycle get /motor_health_monitor
+```
+
+### Lifecycle Management
+
+The node follows the ROS 2 lifecycle state machine:
+
+- **unconfigured** → `configure` → **inactive** → `activate` → **active**
+- **active** → `deactivate` → **inactive** → `cleanup` → **unconfigured**
+
+Use the helper script for easy management:
+```bash
+./scripts/manage_lifecycle.sh {configure|activate|deactivate|cleanup|shutdown|state|start}
 ```
 
 ### View Diagnostics
@@ -77,8 +198,13 @@ The node supports the following ROS 2 parameters:
 
 - `sync_tolerance` (double, default: 0.05) - Tolerance for command/odometry synchronization
 - `update_rate_ms` (int, default: 100) - Update rate in milliseconds
-- `fault_limit` (double, default: 0.95) - Velocity difference threshold for fault detection
+- `fault_threshold` (double, default: 0.95) - Threshold value for fault detection
 - `fault_duration` (double, default: 0.2) - Duration in seconds before fault is triggered
+- `fault_threshold_type` (string, default: "absolute_value") - Threshold comparison type: `"absolute_value"`, `"upper_limit"`, or `"lower_limit"`
+- `pwm_topic` (string, default: "motor_pwm") - Topic name for motor feedback
+- `motor_controller_type` (string, default: "robot_drive") - Type of motor controller to use
+- `motor_message_type` (string, default: "") - Message type override (auto-detected from topic if empty)
+- `motor_pwm_field` (string, default: "") - Field path to extract value from message (uses controller default if empty)
 
 Example configuration file (`config/motor_health.yaml`):
 
@@ -87,9 +213,92 @@ motor_health_monitor:
   ros__parameters:
     sync_tolerance: 0.05
     update_rate_ms: 100
-    fault_limit: 0.95
+    fault_threshold: 0.95
     fault_duration: 0.2
+    fault_threshold_type: "absolute_value"  # Options: "absolute_value", "upper_limit", "lower_limit"
+    pwm_topic: "motor_pwm"
+    motor_controller_type: "robot_drive"
+    motor_message_type: ""  # Auto-detected if empty
+    motor_pwm_field: ""      # Uses controller default if empty
 ```
+
+### Built-in Motor Controllers
+
+- **`robot_drive`** - PWM-based controller with auto-subscription
+  - Handles `std_msgs/msg/Float64` messages
+  - Auto-detects message type from topic
+  - Extracts PWM value from `data` field
+
+### Threshold Types
+
+- **`absolute_value`**: Detects when `|feedback_value| >= threshold`
+  - Use for: PWM saturation, bidirectional signals
+  - Example: `fault_threshold: 0.95` detects PWM magnitude ≥ 95%
+
+- **`upper_limit`**: Detects when `feedback_value >= threshold`
+  - Use for: Current overload, temperature limits
+  - Example: `fault_threshold: 10.0` detects current ≥ 10A
+
+- **`lower_limit`**: Detects when `feedback_value <= threshold`
+  - Use for: Voltage minimums, low battery
+  - Example: `fault_threshold: 10.5` detects voltage ≤ 10.5V
+
+### Custom Motor Controllers
+
+Users can create their own `MotorController` implementations with auto-subscription support:
+
+1. **Create your controller class** (inherit from `MotorController`):
+
+```cpp
+#include "motor_health_monitor/motor_controller.hpp"
+#include "motor_health_monitor/motor_controller_factory.hpp"
+#include <rclcpp/generic_subscription.hpp>
+#include <rclcpp/serialization.hpp>
+
+class MyCustomController : public motor_health_monitor::MotorController {
+public:
+    bool configure(
+        rclcpp_lifecycle::LifecycleNode* node,
+        const std::string& topic_name,
+        const std::string& message_type_override = "",
+        const std::string& field_path_override = "") override {
+        // Auto-detect message type, create subscription, extract feedback value
+        // See robot_drive_motor_controller.hpp for example
+    }
+    
+    void cleanup() override {
+        // Cleanup subscription
+    }
+    
+    double getFeedbackValue() const override {
+        // Return value for fault detection
+    }
+    
+    rclcpp::SubscriptionBase::SharedPtr getSubscription() const override {
+        return subscription_;
+    }
+};
+
+// Register it
+REGISTER_MOTOR_CONTROLLER("my_custom", MyCustomController)
+```
+
+2. **Include your header** in your code (so registration happens)
+
+3. **Configure via YAML**:
+```yaml
+motor_controller_type: "my_custom"
+motor_message_type: "sensor_msgs/msg/JointState"  # Optional override
+motor_pwm_field: "effort[0]"  # Optional field path
+```
+
+**Key Features:**
+- Auto-subscription: Controllers manage their own subscriptions
+- Topic introspection: Auto-detect message types from topics
+- Generic message support: Works with any ROS 2 message type
+- Field extraction: Extract values from complex message structures
+
+See `docs/custom_motor_controller_example.hpp` for a complete example.
 
 ## Testing
 
@@ -109,10 +318,9 @@ colcon test-result --verbose
 ### Test Coverage
 
 - **CmdOdomSync** (10 tests) - Synchronization state detection, boundary conditions, NaN/Inf handling
-- **VelocityDiffController** (12 tests) - Velocity difference calculation, edge cases
-- **MotorFaultDetector** (11 tests) - Fault detection logic, timer behavior, configuration updates
+- **MotorFaultDetector** (11 tests) - Fault detection logic, timer behavior, configuration updates, threshold types
 
-Total: **33 tests** covering normal operation, edge cases, and error conditions.
+Total: **21 tests** covering normal operation, edge cases, and error conditions.
 
 ## Project Structure
 
@@ -120,24 +328,28 @@ Total: **33 tests** covering normal operation, edge cases, and error conditions.
 motor_health_monitor/
 ├── include/
 │   └── motor_health_monitor/
-│       ├── cmd_odom_sync.hpp          # Command/odometry sync detection
-│       ├── motor_controller.hpp        # Motor controller interface
-│       ├── motor_fault_detector.hpp   # Fault detection logic
-│       ├── motor_health_node.hpp      # Main ROS 2 node
-│       ├── robot_drive_motor_controller.hpp  # Example controller implementation
-│       └── velocity_diff_controller.hpp      # Velocity difference wrapper
+│       ├── cmd_odom_sync.hpp              # Command/odometry sync detection
+│       ├── motor_controller.hpp            # Motor controller interface
+│       ├── motor_controller_factory.hpp    # Factory for pluggable controllers
+│       ├── motor_fault_detector.hpp        # Generic fault detection logic
+│       ├── motor_health_node.hpp           # Main ROS 2 lifecycle node
+│       └── robot_drive_motor_controller.hpp # Example controller with auto-subscription
 ├── src/
 │   ├── cmd_odom_sync.cpp
 │   └── motor_health_node.cpp
 ├── test/
-│   ├── mock_motor_controller.hpp      # Mock for testing
+│   ├── mock_motor_controller.hpp          # Mock for testing
 │   ├── test_cmd_odom_sync.cpp
-│   ├── test_motor_fault_detector.cpp
-│   └── test_velocity_diff_controller.cpp
+│   └── test_motor_fault_detector.cpp
+├── docs/
+│   └── custom_motor_controller_example.hpp # Example custom controller
 ├── launch/
 │   └── motor_health.launch.py
 ├── config/
 │   └── motor_health.yaml
+├── scripts/
+│   ├── manage_lifecycle.sh                # Lifecycle management helper
+│   └── test_motor_health.py               # Integration test script
 ├── CMakeLists.txt
 ├── package.xml
 └── README.md
@@ -149,6 +361,7 @@ motor_health_monitor/
 
 - `/cmd_vel` (`geometry_msgs/msg/Twist`) - Commanded velocity
 - `/odom` (`nav_msgs/msg/Odometry`) - Odometry feedback
+- `/motor_pwm` (configurable, default: `std_msgs/msg/Float64`) - Motor feedback (auto-detected message type)
 
 ### Published Topics
 
@@ -178,6 +391,21 @@ Contributions are welcome! Please:
 4. Ensure all tests pass
 5. Submit a pull request
 
-## Contact
+## Author & Maintainer
 
-Maintainer: samogunniyi@gmail.com
+**Samuel Ogunniyi**  
+Email: samogunniyi@gmail.com
+
+## Acknowledgments
+
+This package implements a flexible, extensible motor health monitoring system with:
+- Factory pattern for pluggable motor controllers
+- Generic fault detection supporting multiple threshold types
+- Auto-subscription with topic introspection
+- ROS 2 lifecycle node architecture
+
+Designed for autonomous mobile robots and industrial applications requiring robust motor health monitoring.
+
+---
+
+<sub>This project uses AI-assisted development tools. See [DEVELOPMENT.md](docs/DEVELOPMENT.md) for details.</sub>

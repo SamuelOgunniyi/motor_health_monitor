@@ -5,9 +5,12 @@ set(CMAKE_CXX_STANDARD 17)
 
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(rclcpp_lifecycle REQUIRED)
 find_package(rclcpp_components REQUIRED)
+find_package(lifecycle_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
 find_package(diagnostic_msgs REQUIRED)
 
 include_directories(include)
@@ -19,9 +22,12 @@ add_library(motor_health_component SHARED
 
 ament_target_dependencies(motor_health_component
   rclcpp
+  rclcpp_lifecycle
   rclcpp_components
+  lifecycle_msgs
   geometry_msgs
   nav_msgs
+  std_msgs
   diagnostic_msgs
 )
 
@@ -47,15 +53,15 @@ if(BUILD_TESTING)
   target_link_libraries(test_cmd_odom_sync motor_health_component)
   target_include_directories(test_cmd_odom_sync PUBLIC include)
 
-  # Test for VelocityDiffController
-  ament_add_gtest(test_velocity_diff_controller test/test_velocity_diff_controller.cpp)
-  target_link_libraries(test_velocity_diff_controller motor_health_component)
-  target_include_directories(test_velocity_diff_controller PUBLIC include)
-
   # Test for MotorFaultDetector
   ament_add_gtest(test_motor_fault_detector test/test_motor_fault_detector.cpp)
   target_link_libraries(test_motor_fault_detector motor_health_component)
   target_include_directories(test_motor_fault_detector PUBLIC include)
+
+  # Test for MotorControllerFactory
+  ament_add_gtest(test_motor_controller_factory test/test_motor_controller_factory.cpp)
+  target_link_libraries(test_motor_controller_factory motor_health_component)
+  target_include_directories(test_motor_controller_factory PUBLIC include)
 endif()
 
 ament_package()

@@ -2,3 +2,10 @@ motor_health_monitor:
   ros__parameters:
     sync_tolerance: 0.05
     update_rate_ms: 100
+    fault_threshold: 0.95
+    fault_duration: 0.2
+    fault_threshold_type: "absolute_value"
+    pwm_topic: "motor_pwm"
+    motor_controller_type: "robot_drive"
+    motor_message_type: ""
+    motor_pwm_field: ""
