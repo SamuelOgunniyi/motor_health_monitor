@@ -15,7 +15,6 @@
 #pragma once
 
 #include <memory>
-#include <mutex>
 
 #include <diagnostic_msgs/msg/diagnostic_array.hpp>
 #include <geometry_msgs/msg/twist.hpp>
@@ -68,7 +67,6 @@ private:
   rclcpp_lifecycle::LifecyclePublisher<diagnostic_msgs::msg::DiagnosticArray>::SharedPtr diag_pub_;
   rclcpp::TimerBase::SharedPtr timer_;
 
-  mutable std::mutex data_mutex_;
   geometry_msgs::msg::Twist::SharedPtr cmd_vel_msg_;
   nav_msgs::msg::Odometry::SharedPtr odom_msg_;
 

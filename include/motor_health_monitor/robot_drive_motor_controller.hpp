@@ -53,16 +53,24 @@ public:
             msg_type = introspectTopicType(topic_name);
             if (msg_type.empty()) {
                 msg_type = "std_msgs/msg/Float64";
-                RCLCPP_WARN(node_->get_logger(),
-                           "Could not introspect topic '%s', using default: %s",
-                           topic_name.c_str(), msg_type.c_str());
+                if (node_) {
+                    RCLCPP_WARN(node_->get_logger(),
+                               "Could not introspect topic '%s', using default: %s",
+                               topic_name.c_str(), msg_type.c_str());
+                }
             } else {
-                RCLCPP_INFO(node_->get_logger(),
-                           "Auto-detected message type for '%s': %s",
-                           topic_name.c_str(), msg_type.c_str());
+                if (node_) {
+                    RCLCPP_INFO(node_->get_logger(),
+                               "Auto-detected message type for '%s': %s",
+                               topic_name.c_str(), msg_type.c_str());
+                }
             }
         }
-        
+
+        if (!node_) {
+            return false;
+        }
+
         subscription_ = node_->create_generic_subscription(
             topic_name,
             msg_type,
@@ -71,10 +79,12 @@ public:
                 this->messageCallback(msg);
             }
         );
-        
-        RCLCPP_INFO(node_->get_logger(),
-                   "Subscribed to '%s' (type: %s, field: %s)",
-                   topic_name.c_str(),                 msg_type.c_str(), field_path_.c_str());
+
+        if (node_) {
+            RCLCPP_INFO(node_->get_logger(),
+                       "Subscribed to '%s' (type: %s, field: %s)",
+                       topic_name.c_str(), msg_type.c_str(), field_path_.c_str());
+        }
 
         return true;
     }
@@ -94,6 +104,10 @@ public:
 
 private:
     void messageCallback(std::shared_ptr<rclcpp::SerializedMessage> msg) {
+        if (!msg) {
+            return;
+        }
+
         if (field_path_ == "data") {
             std_msgs::msg::Float64 pwm_msg;
             rclcpp::Serialization<std_msgs::msg::Float64> serializer;
@@ -103,7 +117,9 @@ private:
     }
 
     std::string introspectTopicType(const std::string& topic_name) {
-        if (!node_) return "";
+        if (!node_) {
+            return "";
+        }
 
         auto topic_names_and_types = node_->get_topic_names_and_types();
         for (const auto& [name, types] : topic_names_and_types) {

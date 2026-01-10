@@ -146,12 +146,9 @@ MotorHealthNode::on_cleanup(const rclcpp_lifecycle::State &)
   timer_.reset();
   motor_controller_.reset();
   fault_detector_.reset();
-  
-  {
-    std::lock_guard<std::mutex> lock(data_mutex_);
-    cmd_vel_msg_.reset();
-    odom_msg_.reset();
-  }
+
+  cmd_vel_msg_.reset();
+  odom_msg_.reset();
 
   RCLCPP_INFO(get_logger(), "Motor Health Monitor cleaned up");
   return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
@@ -172,12 +169,9 @@ MotorHealthNode::on_shutdown(const rclcpp_lifecycle::State & state)
   timer_.reset();
   motor_controller_.reset();
   fault_detector_.reset();
-  
-  {
-    std::lock_guard<std::mutex> lock(data_mutex_);
-    cmd_vel_msg_.reset();
-    odom_msg_.reset();
-  }
+
+  cmd_vel_msg_.reset();
+  odom_msg_.reset();
 
   return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
 }
@@ -188,7 +182,6 @@ void MotorHealthNode::cmdCallback(const geometry_msgs::msg::Twist::SharedPtr msg
     return;
   }
 
-  std::lock_guard<std::mutex> lock(data_mutex_);
   cmd_vel_msg_ = msg;
 }
 
@@ -198,7 +191,6 @@ void MotorHealthNode::odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg)
     return;
   }
 
-  std::lock_guard<std::mutex> lock(data_mutex_);
   odom_msg_ = msg;
 }
 
@@ -208,21 +200,14 @@ void MotorHealthNode::update()
     return;
   }
 
-  geometry_msgs::msg::Twist::SharedPtr cmd_msg;
-  nav_msgs::msg::Odometry::SharedPtr odom_msg;
-  bool fault;
-  {
-    std::lock_guard<std::mutex> lock(data_mutex_);
-    cmd_msg = cmd_vel_msg_;
-    odom_msg = odom_msg_;
+  geometry_msgs::msg::Twist::SharedPtr cmd_msg = cmd_vel_msg_;
+  nav_msgs::msg::Odometry::SharedPtr odom_msg = odom_msg_;
 
-    auto current_time = now().seconds();
-    if (fault_detector_) {
-      fault_detector_->update(current_time);
-      fault = fault_detector_->getState() == MotorFaultState::FAULT;
-    } else {
-      fault = false;
-    }
+  auto current_time = now().seconds();
+  bool fault = false;
+  if (fault_detector_) {
+    fault_detector_->update(current_time);
+    fault = fault_detector_->getState() == MotorFaultState::FAULT;
   }
 
   double cmd_vel = cmd_msg ? cmd_msg->linear.x : 0.0;
