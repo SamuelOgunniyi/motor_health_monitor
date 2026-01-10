@@ -1,8 +1,3 @@
-Here’s your complete, polished `README.md` with everything included in one file — structure, diagrams (in Mermaid), simulation instructions, license section, and contribution guidelines.
-
----
-
-````markdown
 # Motor Health Monitor
 
 > A modular, C++17-based toolkit for motor diagnostics and command/odometry compliance monitoring. Hardware-agnostic and simulation-ready.
@@ -30,7 +25,7 @@ Here’s your complete, polished `README.md` with everything included in one fil
 ## Features
 
 - ✅ **Command/Odometry Synchronization** with `CmdOdomSync`
-- ⚙️ **PWM Saturation Detection** using `PWMSaturationMonitor`
+- ⚙️ **Motor Fault Detection** using `MotorFaultDetector`
 - 🔌 Easily extendable to hardware drivers or simulated environments
 - 🧩 ROS-independent, pure C++17
 - 🧪 Ready for CI testing and modular integration
@@ -49,7 +44,7 @@ This project includes built-in test simulations that verify:
 
 * **CmdOdomSync** state transitions:
   `SYNCED`, `UNSYNCED`, and `INDETERMINATE`
-* **PWM saturation** detection logic with duration tracking
+* **Motor fault detection** logic with duration tracking
 
 These are implemented in `main.cpp`, and require **no hardware** to run.
 
@@ -68,7 +63,7 @@ These are implemented in `main.cpp`, and require **no hardware** to run.
 ## Build Instructions
 
 ```bash
-git clone https://github.com/your-username/motor_health_monitor.git
+git clone https://github.com/SamuelOgunniyi/motor_health_monitor.git
 cd motor_health_monitor
 mkdir build && cd build
 cmake ..
@@ -85,9 +80,9 @@ make
 
 This will:
 
-* Generate synthetic `/cmd_vel` and `/odom` signals
+* Generate synthetic command and odometry signals
 * Simulate a mismatch (non-compliance)
-* Trigger saturation conditions and state transitions
+* Trigger fault conditions and state transitions
 
 The simulation runs entirely from `main.cpp`.
 
@@ -98,12 +93,14 @@ The simulation runs entirely from `main.cpp`.
 ```
 motor_health_monitor/
 ├── include/
-│   └── cmd_odom_sync/
-│       ├── CmdOdomSync.hpp
-│       └── PWMSaturationMonitor.hpp
+│   └── motor_health_monitor/
+│       ├── CmdOdomSync.h
+│       ├── MotorController.h
+│       ├── MotorFaultDetector.h
+│       ├── RobotDriveMotorController.h
+│       └── motor_controller_factory.hpp
 ├── src/
 │   ├── CmdOdomSync.cpp
-│   ├── PWMSaturationMonitor.cpp
 │   └── main.cpp
 ├── build/
 ├── CMakeLists.txt
@@ -132,7 +129,3 @@ Contributions are welcome! Feel free to:
 ## Contact
 
 Have questions or ideas? Open an issue or reach out via GitHub.
-
----
-
-
