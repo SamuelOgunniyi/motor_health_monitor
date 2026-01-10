@@ -9,3 +9,4 @@ motor_health_monitor:
     motor_controller_type: "robot_drive"
     motor_message_type: ""
     motor_pwm_field: ""
+    stale_data_timeout: 1.0

@@ -15,6 +15,7 @@
 #pragma once
 
 #include <cmath>
+#include <chrono>
 
 #include "motor_controller.hpp"
 
@@ -45,7 +46,7 @@ public:
           motor_controller_(controller),
           state_(MotorFaultState::NO_FAULT),
           timer_started_(false),
-          start_time_(-1.0) {}
+          start_time_(std::chrono::steady_clock::now()) {}
 
     MotorFaultDetector(const MotorFaultDetector&) = delete;
     MotorFaultDetector& operator=(const MotorFaultDetector&) = delete;
@@ -54,7 +55,7 @@ public:
 
     ~MotorFaultDetector() = default;
 
-    void update(double current_time) {
+    void update(std::chrono::steady_clock::time_point current_time) {
         double feedback_value = motor_controller_.getFeedbackValue();
         bool threshold_exceeded = false;
 
@@ -81,13 +82,23 @@ public:
             timer_started_ = true;
         }
 
-        if ((current_time - start_time_) >= config_.duration) {
+        auto duration_sec = std::chrono::duration<double>(
+            current_time - start_time_).count();
+        if (duration_sec >= config_.duration) {
             state_ = MotorFaultState::FAULT;
         }
     }
 
     MotorFaultState getState() const noexcept {
         return state_;
+    }
+
+    double getCurrentFeedbackValue() const noexcept {
+        return motor_controller_.getFeedbackValue();
+    }
+
+    const FaultDetectionConfig& getConfig() const noexcept {
+        return config_;
     }
 
     void setConfig(const FaultDetectionConfig& config) noexcept {
@@ -99,7 +110,7 @@ private:
     MotorController& motor_controller_;
     MotorFaultState state_;
     bool timer_started_;
-    double start_time_;
+    std::chrono::steady_clock::time_point start_time_;
 };
 
 }  // namespace motor_health_monitor

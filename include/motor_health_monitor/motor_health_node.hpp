@@ -14,6 +14,7 @@
 
 #pragma once
 
+#include <chrono>
 #include <memory>
 
 #include <diagnostic_msgs/msg/diagnostic_array.hpp>
@@ -69,6 +70,9 @@ private:
 
   geometry_msgs::msg::Twist::SharedPtr cmd_vel_msg_;
   nav_msgs::msg::Odometry::SharedPtr odom_msg_;
+  std::chrono::steady_clock::time_point cmd_vel_timestamp_;
+  std::chrono::steady_clock::time_point odom_timestamp_;
+  double stale_data_timeout_;
 
   std::unique_ptr<MotorController> motor_controller_;
   CmdOdomSync sync_;
