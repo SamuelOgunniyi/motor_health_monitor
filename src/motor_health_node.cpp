@@ -17,6 +17,7 @@
 #include <chrono>
 
 #include <lifecycle_msgs/msg/state.hpp>
+#include <rcl_interfaces/msg/parameter_descriptor.hpp>
 
 #include "motor_health_monitor/robot_drive_motor_controller.hpp"
 
@@ -32,9 +33,21 @@ MotorHealthNode::MotorHealthNode(const rclcpp::NodeOptions & options)
 {
   declare_parameter("sync_tolerance", 0.05);
   declare_parameter("update_rate_ms", 100);
-  declare_parameter("fault_threshold", 0.95);
+  rcl_interfaces::msg::ParameterDescriptor fault_threshold_desc;
+  fault_threshold_desc.description =
+    "Threshold value for fault detection. Meaning depends on threshold_type: "
+    "absolute_value=|feedback|, upper_limit=feedback>=threshold, "
+    "lower_limit=feedback<=threshold. Units match feedback_value (typically "
+    "normalized PWM, current, or other motor feedback signal).";
+  declare_parameter("fault_threshold", 0.95, fault_threshold_desc);
+
   declare_parameter("fault_duration", 0.2);
-  declare_parameter("fault_threshold_type", "absolute_value");
+
+  rcl_interfaces::msg::ParameterDescriptor fault_threshold_type_desc;
+  fault_threshold_type_desc.description =
+    "Type of threshold comparison: 'absolute_value' (|feedback| >= threshold), "
+    "'upper_limit' (feedback >= threshold), 'lower_limit' (feedback <= threshold)";
+  declare_parameter("fault_threshold_type", "absolute_value", fault_threshold_type_desc);
   declare_parameter("pwm_topic", "motor_pwm");
   declare_parameter("motor_controller_type", "robot_drive");
   declare_parameter("motor_message_type", "");
@@ -95,10 +108,10 @@ MotorHealthNode::on_configure(const rclcpp_lifecycle::State &)
   stale_data_timeout_ = get_parameter("stale_data_timeout").as_double();
 
   cmd_sub_ = create_subscription<geometry_msgs::msg::Twist>(
-    "cmd_vel", 10, std::bind(&MotorHealthNode::cmdCallback, this, _1));
+    "cmd_vel", 1, std::bind(&MotorHealthNode::cmdCallback, this, _1));
 
   odom_sub_ = create_subscription<nav_msgs::msg::Odometry>(
-    "odom", 10, std::bind(&MotorHealthNode::odomCallback, this, _1));
+    "odom", 1, std::bind(&MotorHealthNode::odomCallback, this, _1));
 
   diag_pub_ = create_publisher<diagnostic_msgs::msg::DiagnosticArray>(
     "diagnostics", 10);

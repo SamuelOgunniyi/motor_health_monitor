@@ -74,7 +74,7 @@ public:
         subscription_ = node_->create_generic_subscription(
             topic_name,
             msg_type,
-            rclcpp::QoS(10),
+            rclcpp::QoS(1),
             [this](std::shared_ptr<rclcpp::SerializedMessage> msg) {
                 this->messageCallback(msg);
             }

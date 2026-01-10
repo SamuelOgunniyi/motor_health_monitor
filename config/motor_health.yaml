@@ -2,9 +2,14 @@ motor_health_monitor:
   ros__parameters:
     sync_tolerance: 0.05
     update_rate_ms: 100
+    # fault_threshold: Threshold value for fault detection (units match feedback_value)
+    #   - For absolute_value: |feedback_value| >= threshold triggers fault
+    #   - For upper_limit: feedback_value >= threshold triggers fault  
+    #   - For lower_limit: feedback_value <= threshold triggers fault
+    #   Typical values: 0.95 (95% PWM saturation), or motor-specific current/voltage limits
     fault_threshold: 0.95
     fault_duration: 0.2
-    fault_threshold_type: "absolute_value"
+    fault_threshold_type: "absolute_value"  # Options: "absolute_value", "upper_limit", "lower_limit"
     pwm_topic: "motor_pwm"
     motor_controller_type: "robot_drive"
     motor_message_type: ""

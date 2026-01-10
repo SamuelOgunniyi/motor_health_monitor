@@ -14,10 +14,12 @@ A ROS 2 C++17 package for monitoring motor health and detecting faults through c
 - 🔍 **Generic Motor Fault Detection** - Configurable threshold-based fault detection for any motor feedback type (PWM, current, temperature, etc.)
 - 🔌 **Pluggable Motor Controllers** - Factory pattern allows custom motor controller implementations via configuration
 - 🔄 **Auto-Subscription with Topic Introspection** - Controllers automatically detect and subscribe to their message types
+- ⏱️ **Stale Data Detection** - Detects and handles stale messages with configurable timeout
+- 🚫 **Bounded Queue with Drop-Oldest Policy** - Queue depth of 1 ensures old messages are dropped immediately, prioritizing fresh data for deterministic control
 - 🧩 **ROS 2 Component Architecture** - Built as a composable lifecycle node using `rclcpp_components`
 - 🧪 **Comprehensive Unit Tests** - Full test coverage with Google Test
-- 🔒 **Memory Safe & Thread Safe** - Follows modern C++17 best practices with proper ownership semantics
-- 📊 **Diagnostic Integration** - Publishes diagnostic messages compatible with ROS 2 diagnostic aggregator
+- 🔒 **Memory Safe** - Follows modern C++17 best practices with proper ownership semantics (single-threaded executor)
+- 📊 **Enhanced Diagnostics** - Rich diagnostic output with threshold values, feedback values, and message ages
 
 ## Architecture
 
@@ -55,10 +57,11 @@ The Motor Health Monitor continuously compares **commanded velocities** (what yo
    - Motor feedback topic (configurable, e.g., `/motor_pwm`) - Hardware-level motor feedback
 
 2. **Processing Loop** (runs at configurable rate, default 100ms):
-   - Stores latest messages (thread-safe)
+   - Stores latest messages (queue depth = 1, drops old messages immediately)
+   - Checks for stale data (messages older than timeout)
    - **Process 1**: Command/Odometry synchronization check
    - **Process 2**: Motor fault detection from controller feedback
-   - Publishes diagnostic status
+   - Publishes enhanced diagnostic status with detailed information
 
 ### Two Monitoring Systems
 
@@ -111,10 +114,18 @@ The node publishes to `/diagnostics` with:
 
 - **Status Level**:
   - `OK` - Motor healthy (no fault detected)
-  - `ERROR` - Motor fault detected (velocity error sustained beyond threshold)
-- **Status Message**: Human-readable description
+  - `WARN` - Stale data detected (messages older than timeout)
+  - `ERROR` - Motor fault detected (threshold exceeded for duration)
+- **Status Message**: Human-readable description with fault reasoning
 - **Hardware ID**: Identifies which motor is being monitored
 - **Timestamp**: When the status was computed
+- **Diagnostic Values**:
+  - `feedback_value` - Current motor feedback value
+  - `fault_threshold` - Configured threshold value
+  - `fault_duration` - Duration required for fault detection
+  - `threshold_type` - Type of threshold comparison
+  - `cmd_vel_age` - Age of last cmd_vel message (seconds)
+  - `odom_age` - Age of last odom message (seconds)
 
 ### Example Scenarios
 
@@ -198,13 +209,16 @@ The node supports the following ROS 2 parameters:
 
 - `sync_tolerance` (double, default: 0.05) - Tolerance for command/odometry synchronization
 - `update_rate_ms` (int, default: 100) - Update rate in milliseconds
-- `fault_threshold` (double, default: 0.95) - Threshold value for fault detection
+- `fault_threshold` (double, default: 0.95) - Threshold value for fault detection (units match feedback_value, typically normalized PWM, current, or other motor feedback signal)
 - `fault_duration` (double, default: 0.2) - Duration in seconds before fault is triggered
-- `fault_threshold_type` (string, default: "absolute_value") - Threshold comparison type: `"absolute_value"`, `"upper_limit"`, or `"lower_limit"`
+- `fault_threshold_type` (string, default: "absolute_value") - Threshold comparison type: `"absolute_value"` (|feedback| >= threshold), `"upper_limit"` (feedback >= threshold), or `"lower_limit"` (feedback <= threshold)
+- `stale_data_timeout` (double, default: 1.0) - Timeout in seconds for detecting stale messages
 - `pwm_topic` (string, default: "motor_pwm") - Topic name for motor feedback
 - `motor_controller_type` (string, default: "robot_drive") - Type of motor controller to use
 - `motor_message_type` (string, default: "") - Message type override (auto-detected from topic if empty)
 - `motor_pwm_field` (string, default: "") - Field path to extract value from message (uses controller default if empty)
+
+**Note:** Parameter descriptions are available via `ros2 param describe /motor_health_monitor <parameter_name>`
 
 Example configuration file (`config/motor_health.yaml`):
 
@@ -213,9 +227,10 @@ motor_health_monitor:
   ros__parameters:
     sync_tolerance: 0.05
     update_rate_ms: 100
-    fault_threshold: 0.95
+    fault_threshold: 0.95  # Threshold for fault detection (units match feedback_value)
     fault_duration: 0.2
     fault_threshold_type: "absolute_value"  # Options: "absolute_value", "upper_limit", "lower_limit"
+    stale_data_timeout: 1.0  # Timeout for stale data detection (seconds)
     pwm_topic: "motor_pwm"
     motor_controller_type: "robot_drive"
     motor_message_type: ""  # Auto-detected if empty
@@ -318,9 +333,10 @@ colcon test-result --verbose
 ### Test Coverage
 
 - **CmdOdomSync** (10 tests) - Synchronization state detection, boundary conditions, NaN/Inf handling
-- **MotorFaultDetector** (11 tests) - Fault detection logic, timer behavior, configuration updates, threshold types
+- **MotorFaultDetector** (18 tests) - Fault detection logic, timer behavior, configuration updates, threshold types (absolute_value, upper_limit, lower_limit)
+- **MotorControllerFactory** (7 tests) - Factory pattern, registration, creation, error handling
 
-Total: **21 tests** covering normal operation, edge cases, and error conditions.
+Total: **35 tests** covering normal operation, edge cases, and error conditions.
 
 ## Project Structure
 
@@ -369,11 +385,13 @@ motor_health_monitor/
 
 ## Code Quality
 
-The codebase follows modern C++17 best practices:
+The codebase follows modern C++17 best practices and robotics control system principles:
 
 - **Rule of 5/0** - Explicit copy/move semantics
-- **Thread Safety** - Mutex protection for shared data accessed from callbacks
-- **Exception Safety** - RAII patterns with `std::lock_guard`
+- **Single-Threaded Executor** - Uses ROS 2 single-threaded executor (no mutexes needed, deterministic execution)
+- **Bounded Queue with Drop-Oldest Policy** - Queue depth of 1 ensures old messages are dropped immediately, prioritizing fresh data for deterministic control
+- **Time Is a Contract** - Uses monotonic time for fault detection duration calculations
+- **Exception Safety** - RAII patterns throughout
 - **Const Correctness** - Proper use of `const` and `noexcept`
 - **Memory Safety** - Smart pointers, no raw pointers, clear ownership
 
