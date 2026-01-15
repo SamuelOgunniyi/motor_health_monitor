@@ -32,9 +32,9 @@ def generate_launch_description():
             executable='component_container',
             composable_node_descriptions=[
                 ComposableNode(
-                    package='motor_health_monitor',
-                    plugin='motor_health_monitor::MotorHealthNode',
-                    name='motor_health_monitor',
+            package='motor_health_monitor',
+            plugin='motor_health_monitor::MotorHealthNode',
+            name='motor_health_monitor',
                     parameters=[config_file] if os.path.exists(config_file) else []
                 )
             ],

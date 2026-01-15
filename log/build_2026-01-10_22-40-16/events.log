@@ -1,0 +1,130 @@
+[0.000000] (-) TimerEvent: {}
+[0.000305] (motor_health_monitor) JobQueued: {'identifier': 'motor_health_monitor', 'dependencies': OrderedDict()}
+[0.000391] (motor_health_monitor) JobStarted: {'identifier': 'motor_health_monitor'}
+[0.005512] (motor_health_monitor) JobProgress: {'identifier': 'motor_health_monitor', 'progress': 'cmake'}
+[0.006753] (motor_health_monitor) JobProgress: {'identifier': 'motor_health_monitor', 'progress': 'build'}
+[0.006779] (motor_health_monitor) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor', '--', '-j28', '-l28'], 'cwd': '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/sogu/Personal/motor_health_monitor', 'KDE_FULL_SESSION': 'true', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'USER': 'sogu', 'PAM_KWALLET5_LOGIN': '/run/user/1000/kwallet5.socket', 'VSCODE_NLS_CONFIG': '{"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"/usr/share/cursor/resources/app/out/nls.messages.json","locale":"en-us","availableLanguages":{}}', 'QT_SCREEN_SCALE_FACTORS': 'eDP-1=2;DP-1=2;HDMI-1=2;DP-1-1=2;DP-1-2=2;DP-1-3=2;HDMI-1-0=2;DP-1-0=2;DP-1-1=2;DP-1-2=2;', 'XDG_SEAT': 'seat0', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'SSH_AGENT_PID': '2671', 'XDG_SESSION_TYPE': 'x11', 'KWIN_FORCE_SW_CURSOR': '1', 'XCURSOR_SIZE': '24', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/sogu', 'CHROME_DESKTOP': 'cursor.desktop', 'KDE_APPLICATIONS_AS_SCOPE': '1', 'OLDPWD': '/home/sogu/Personal/motor_health_monitor', 'DESKTOP_SESSION': 'plasma', 'VSCODE_IPC_HOOK': '/run/user/1000/vscode-6c7a1091-2.3.-main.sock', 'ROS_PYTHON_VERSION': '3', 'GTK_RC_FILES': '/etc/gtk/gtkrc:/home/sogu/.gtkrc:/home/sogu/.config/gtkrc', 'GTK_MODULES': 'gail:atk-bridge', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'SDL_IM_MODULE': 'maliit', 'KDE_SESSION_VERSION': '5', 'MANAGERPID': '2573', 'SYSTEMD_EXEC_PID': '2744', 'SSH_ASKPASS': '/usr/bin/ksshaskpass', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873', 'VSCODE_CRASH_REPORTER_PROCESS_TYPE': 'extensionHost', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'VSCODE_L10N_BUNDLE_LOCATION': '', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'maliit', 'LOGNAME': 'sogu', 'FORCE_COLOR': '0', '__GL_THREADED_OPTIMIZATIONS': '0', 'QT_AUTO_SCREEN_SCALE_FACTOR': '0', 'JOURNAL_STREAM': '9:5494', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/plasma-ksmserver.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'TERM': 'dumb', 'EVERYSPHERE_RIPGREP_PATH': '/usr/share/cursor/resources/app/node_modules/@vscode/ripgrep/bin/rg', 'XDG_SESSION_ID': '5', 'KDE_SYSTEMD_LAUNCHER': '0', 'COMPOSER_NO_INTERACTION': '1', 'GTK2_RC_FILES': '/etc/gtk-2.0/gtkrc:/home/sogu/.gtkrc-2.0:/home/sogu/.config/gtkrc-2.0', 'PATH': '/home/sogu/.local/bin:/home/sogu/.local/bin:/home/sogu/.local/bin:/opt/ros/jazzy/bin:/home/sogu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/dev:@/tmp/.ICE-unix/2744,unix/dev:/tmp/.ICE-unix/2744', 'INVOCATION_ID': '1cf326ed693249e885f1daf985a07e58', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session2', 'VSCODE_PROCESS_TITLE': 'extension-host  [1-1]', 'XDG_RUNTIME_DIR': '/run/user/1000', 'XCURSOR_THEME': 'capitaine-cursors', 'GDK_BACKEND': 'x11', 'ICEAUTHORITY': '/run/user/1000/iceauth_RHLxeE', 'CURSOR_AGENT': '1', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'KDE', 'XDG_SESSION_DESKTOP': 'KDE', 'XAUTHORITY': '/tmp/xauth_GQtXyz', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SBX_CHROME_API_RQ': '1', 'CURSOR_TRACE_ID': '369cc0e13111496fa6bd0c8c0869c58f', 'SSH_AUTH_SOCK': '/tmp/ssh-YVOJTUFVGsNT/agent.2620', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'CURSOR_CLI_MODE': 'local', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'KDE', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:ee2c5d40-85df-47e0-b335-41cf1e90e401', 'QT_ACCESSIBILITY': '1', 'CURSOR_CLI': 'ELECTRON_RUN_AS_NODE=1 "/usr/share/cursor/bin/../cursor" "/usr/share/cursor/bin/../resources/app/out/cli.js"', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'maliit', 'XDG_VTNR': '2', 'PWD': '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor', 'VSCODE_CLI': '1', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/home/sogu/.config/kdedefaults:/etc/xdg/xdg-plasma:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings', 'VSCODE_CODE_CACHE_PATH': '/home/sogu/.config/Cursor/CachedData/4ca9b38c6c97d4243bf0c61e51426667cb964bd0', 'CLUTTER_IM_MODULE': 'maliit', 'XDG_DATA_DIRS': '/usr/share/plasma:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'KDE_SESSION_UID': '1000', 'COLCON': '1', '_ZO_DOCTOR': '0', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'SANDBOX_LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'ELECTRON_NO_ATTACH_CONSOLE': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'VSCODE_PID': '3731'}), 'shell': False}
+[0.059612] (motor_health_monitor) StdoutLine: {'line': b'[ 18%] Built target gtest\n'}
+[0.061068] (motor_health_monitor) StdoutLine: {'line': b'[ 36%] Built target gtest_main\n'}
+[0.063612] (motor_health_monitor) StdoutLine: {'line': b'[ 45%] Building CXX object CMakeFiles/motor_health_component.dir/src/motor_health_node.cpp.o\n'}
+[0.099752] (-) TimerEvent: {}
+[0.199971] (-) TimerEvent: {}
+[0.300179] (-) TimerEvent: {}
+[0.400407] (-) TimerEvent: {}
+[0.500584] (-) TimerEvent: {}
+[0.600796] (-) TimerEvent: {}
+[0.701004] (-) TimerEvent: {}
+[0.801217] (-) TimerEvent: {}
+[0.901485] (-) TimerEvent: {}
+[1.001663] (-) TimerEvent: {}
+[1.101933] (-) TimerEvent: {}
+[1.202124] (-) TimerEvent: {}
+[1.302420] (-) TimerEvent: {}
+[1.402706] (-) TimerEvent: {}
+[1.503000] (-) TimerEvent: {}
+[1.603263] (-) TimerEvent: {}
+[1.703555] (-) TimerEvent: {}
+[1.803764] (-) TimerEvent: {}
+[1.903999] (-) TimerEvent: {}
+[2.004275] (-) TimerEvent: {}
+[2.104569] (-) TimerEvent: {}
+[2.204867] (-) TimerEvent: {}
+[2.305089] (-) TimerEvent: {}
+[2.405359] (-) TimerEvent: {}
+[2.505626] (-) TimerEvent: {}
+[2.605851] (-) TimerEvent: {}
+[2.706065] (-) TimerEvent: {}
+[2.806276] (-) TimerEvent: {}
+[2.906604] (-) TimerEvent: {}
+[3.006852] (-) TimerEvent: {}
+[3.107080] (-) TimerEvent: {}
+[3.207310] (-) TimerEvent: {}
+[3.307555] (-) TimerEvent: {}
+[3.407819] (-) TimerEvent: {}
+[3.508059] (-) TimerEvent: {}
+[3.608269] (-) TimerEvent: {}
+[3.708484] (-) TimerEvent: {}
+[3.808756] (-) TimerEvent: {}
+[3.908960] (-) TimerEvent: {}
+[4.009278] (-) TimerEvent: {}
+[4.109552] (-) TimerEvent: {}
+[4.209784] (-) TimerEvent: {}
+[4.310006] (-) TimerEvent: {}
+[4.410223] (-) TimerEvent: {}
+[4.510448] (-) TimerEvent: {}
+[4.610617] (-) TimerEvent: {}
+[4.710870] (-) TimerEvent: {}
+[4.811078] (-) TimerEvent: {}
+[4.911287] (-) TimerEvent: {}
+[5.011549] (-) TimerEvent: {}
+[5.111816] (-) TimerEvent: {}
+[5.212052] (-) TimerEvent: {}
+[5.312258] (-) TimerEvent: {}
+[5.412565] (-) TimerEvent: {}
+[5.512776] (-) TimerEvent: {}
+[5.612983] (-) TimerEvent: {}
+[5.713188] (-) TimerEvent: {}
+[5.813406] (-) TimerEvent: {}
+[5.913627] (-) TimerEvent: {}
+[6.013811] (-) TimerEvent: {}
+[6.113991] (-) TimerEvent: {}
+[6.214202] (-) TimerEvent: {}
+[6.314453] (-) TimerEvent: {}
+[6.414634] (-) TimerEvent: {}
+[6.514853] (-) TimerEvent: {}
+[6.554021] (motor_health_monitor) StdoutLine: {'line': b'[ 54%] Linking CXX shared library libmotor_health_component.so\n'}
+[6.614987] (-) TimerEvent: {}
+[6.715198] (-) TimerEvent: {}
+[6.815405] (-) TimerEvent: {}
+[6.903278] (motor_health_monitor) StdoutLine: {'line': b'[ 63%] Built target motor_health_component\n'}
+[6.915517] (-) TimerEvent: {}
+[6.924755] (motor_health_monitor) StdoutLine: {'line': b'[ 72%] Building CXX object CMakeFiles/test_motor_fault_detector.dir/test/test_motor_fault_detector.cpp.o\n'}
+[6.927914] (motor_health_monitor) StdoutLine: {'line': b'[ 81%] Building CXX object CMakeFiles/test_cmd_odom_sync.dir/test/test_cmd_odom_sync.cpp.o\n'}
+[7.015696] (-) TimerEvent: {}
+[7.115895] (-) TimerEvent: {}
+[7.216108] (-) TimerEvent: {}
+[7.316342] (-) TimerEvent: {}
+[7.416574] (-) TimerEvent: {}
+[7.516785] (-) TimerEvent: {}
+[7.617010] (-) TimerEvent: {}
+[7.711599] (motor_health_monitor) StdoutLine: {'line': b'[ 90%] Linking CXX executable test_cmd_odom_sync\n'}
+[7.717144] (-) TimerEvent: {}
+[7.817353] (-) TimerEvent: {}
+[7.913012] (motor_health_monitor) StderrLine: {'line': b'In file included from /home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:3:\n'}
+[7.913231] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/mock_motor_controller.hpp:15:10: error: \xe2\x80\x98void motor_health_monitor::test::MockMotorController::setCommand(double)\xe2\x80\x99 marked \xe2\x80\x98override\xe2\x80\x99, but does not override\n'}
+[7.913316] (motor_health_monitor) StderrLine: {'line': b'   15 |     void setCommand(double cmd) override {\n'}
+[7.913405] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~~~~~\n'}
+[7.917416] (-) TimerEvent: {}
+[7.942754] (motor_health_monitor) StdoutLine: {'line': b'[ 90%] Built target test_cmd_odom_sync\n'}
+[7.986468] (motor_health_monitor) StderrLine: {'line': b'In file included from /usr/include/c++/13/memory:78,\n'}
+[7.986655] (motor_health_monitor) StderrLine: {'line': b'                 from /opt/ros/jazzy/src/gtest_vendor/include/gtest/gtest.h:56,\n'}
+[7.986735] (motor_health_monitor) StderrLine: {'line': b'                 from /home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:1:\n'}
+[7.986821] (motor_health_monitor) StderrLine: {'line': b'/usr/include/c++/13/bits/unique_ptr.h: In instantiation of \xe2\x80\x98std::__detail::__unique_ptr_t<_Tp> std::make_unique(_Args&& ...) [with _Tp = motor_health_monitor::test::MockMotorController; _Args = {}; __detail::__unique_ptr_t<_Tp> = __detail::__unique_ptr_t<motor_health_monitor::test::MockMotorController>]\xe2\x80\x99:\n'}
+[7.986903] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:12:65:   required from here\n'}
+[7.986974] (motor_health_monitor) StderrLine: {'line': b'/usr/include/c++/13/bits/unique_ptr.h:1070:30: error: invalid new-expression of abstract class type \xe2\x80\x98motor_health_monitor::test::MockMotorController\xe2\x80\x99\n'}
+[7.987050] (motor_health_monitor) StderrLine: {'line': b' 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }\n'}
+[7.987122] (motor_health_monitor) StderrLine: {'line': b'      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[7.987193] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/mock_motor_controller.hpp:11:7: note:   because the following virtual functions are pure within \xe2\x80\x98motor_health_monitor::test::MockMotorController\xe2\x80\x99:\n'}
+[7.987265] (motor_health_monitor) StderrLine: {'line': b'   11 | class MockMotorController : public MotorController {\n'}
+[7.987346] (motor_health_monitor) StderrLine: {'line': b'      |       ^~~~~~~~~~~~~~~~~~~\n'}
+[7.987420] (motor_health_monitor) StderrLine: {'line': b'In file included from /home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:3,\n'}
+[7.987491] (motor_health_monitor) StderrLine: {'line': b'                 from /home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:2:\n'}
+[7.987563] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_controller.hpp:15:18: note:     \xe2\x80\x98virtual bool motor_health_monitor::MotorController::configure(rclcpp_lifecycle::LifecycleNode*, const std::string&, const std::string&, const std::string&)\xe2\x80\x99\n'}
+[7.987638] (motor_health_monitor) StderrLine: {'line': b'   15 |     virtual bool configure(\n'}
+[7.987707] (motor_health_monitor) StderrLine: {'line': b'      |                  ^~~~~~~~~\n'}
+[7.987780] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_controller.hpp:21:18: note:     \xe2\x80\x98virtual void motor_health_monitor::MotorController::cleanup()\xe2\x80\x99\n'}
+[7.987855] (motor_health_monitor) StderrLine: {'line': b'   21 |     virtual void cleanup() = 0;\n'}
+[7.987927] (motor_health_monitor) StderrLine: {'line': b'      |                  ^~~~~~~\n'}
+[7.987998] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_controller.hpp:25:49: note:     \xe2\x80\x98virtual rclcpp::SubscriptionBase::SharedPtr motor_health_monitor::MotorController::getSubscription() const\xe2\x80\x99\n'}
+[7.988069] (motor_health_monitor) StderrLine: {'line': b'   25 |     virtual rclcpp::SubscriptionBase::SharedPtr getSubscription() const = 0;\n'}
+[7.988138] (motor_health_monitor) StderrLine: {'line': b'      |                                                 ^~~~~~~~~~~~~~~\n'}
+[8.017523] (-) TimerEvent: {}
+[8.117753] (-) TimerEvent: {}
+[8.217963] (-) TimerEvent: {}
+[8.318202] (-) TimerEvent: {}
+[8.347672] (motor_health_monitor) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/test_motor_fault_detector.dir/build.make:76: CMakeFiles/test_motor_fault_detector.dir/test/test_motor_fault_detector.cpp.o] Error 1\n'}
+[8.348109] (motor_health_monitor) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:215: CMakeFiles/test_motor_fault_detector.dir/all] Error 2\n'}
+[8.348394] (motor_health_monitor) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[8.350271] (motor_health_monitor) CommandEnded: {'returncode': 2}
+[8.364862] (motor_health_monitor) JobEnded: {'identifier': 'motor_health_monitor', 'rc': 2}
+[8.375222] (-) EventReactorShutdown: {}

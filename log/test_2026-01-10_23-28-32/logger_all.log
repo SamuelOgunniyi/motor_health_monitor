@@ -1,0 +1,65 @@
+[0.124s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'test', '--packages-select', 'motor_health_monitor', '--event-handlers', 'console_direct+']
+[0.124s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='test', build_base='build', install_base='install', merge_install=False, test_result_base=None, retest_until_fail=0, retest_until_pass=0, abort_on_error=False, return_code_on_test_failure=False, executor='parallel', parallel_workers=28, event_handlers=['console_direct+'], ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['motor_health_monitor'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], ctest_args=None, python_testing=None, pytest_args=None, pytest_with_coverage=False, unittest_args=None, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x70c163a934d0>, verb_extension=<colcon_core.verb.test.TestVerb object at 0x70c163bbf830>, main=<bound method TestVerb.main of <colcon_core.verb.test.TestVerb object at 0x70c163bbf830>>, mixin_verb=('test',))
+[0.151s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.151s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.151s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.151s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.151s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.151s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.151s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/sogu/Personal/motor_health_monitor'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.169s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.catkin' and name 'motor_health_monitor'
+[0.169s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.169s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.169s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.169s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.169s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'motor_health_monitor' test argument 'ctest_args' from command line to 'None'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'motor_health_monitor' test argument 'python_testing' from command line to 'None'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'motor_health_monitor' test argument 'pytest_args' from command line to 'None'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'motor_health_monitor' test argument 'pytest_with_coverage' from command line to 'False'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'motor_health_monitor' test argument 'unittest_args' from command line to 'None'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'motor_health_monitor' test argument 'retest_until_pass' from command line to '0'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'motor_health_monitor' test argument 'retest_until_fail' from command line to '0'
+[0.171s] DEBUG:colcon.colcon_core.verb.test:Testing package 'motor_health_monitor' with the following arguments: {'build_base': '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor', 'ctest_args': None, 'install_base': '/home/sogu/Personal/motor_health_monitor/install/motor_health_monitor', 'path': '/home/sogu/Personal/motor_health_monitor', 'pytest_args': None, 'pytest_with_coverage': False, 'python_testing': None, 'retest_until_fail': 0, 'retest_until_pass': 0, 'test_result_base': None, 'unittest_args': None}
+[0.171s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.172s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.172s] INFO:colcon.colcon_ros.task.catkin.test:Testing ROS package in '/home/sogu/Personal/motor_health_monitor' with build type 'catkin'
+[0.172s] Level 1:colcon.colcon_core.shell:create_environment_hook('motor_health_monitor', 'ros_package_path')
+[0.173s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.173s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor/devel/share/motor_health_monitor/hook/ros_package_path.ps1'
+[0.174s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor/devel/share/motor_health_monitor/hook/ros_package_path.dsv'
+[0.174s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor/devel/share/motor_health_monitor/hook/ros_package_path.sh'
+[0.174s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(motor_health_monitor)
+[0.175s] Level 1:colcon.colcon_core.environment:checking '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor/devel' for CMake module files
+[0.176s] Level 1:colcon.colcon_core.environment:checking '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor/devel' for CMake config files
+[0.176s] Level 1:colcon.colcon_core.environment:checking '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor/devel/bin'
+[0.176s] Level 1:colcon.colcon_core.environment:checking '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor/devel/lib/pkgconfig/motor_health_monitor.pc'
+[0.177s] Level 1:colcon.colcon_core.environment:checking '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor/devel/lib/python3.12/site-packages'
+[0.177s] Level 1:colcon.colcon_core.environment:checking '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor/devel/bin'
+[0.177s] INFO:colcon.colcon_core.shell:Creating package script '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor/devel/share/motor_health_monitor/package.ps1'
+[0.177s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor/devel/share/motor_health_monitor/package.dsv'
+[0.178s] INFO:colcon.colcon_core.shell:Creating package script '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor/devel/share/motor_health_monitor/package.sh'
+[0.178s] INFO:colcon.colcon_core.shell:Creating package script '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor/devel/share/motor_health_monitor/package.bash'
+[0.178s] INFO:colcon.colcon_core.shell:Creating package script '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor/devel/share/motor_health_monitor/package.zsh'
+[0.179s] INFO:colcon.colcon_cmake.task.cmake.test:Testing CMake package in '/home/sogu/Personal/motor_health_monitor'
+[0.179s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.179s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.192s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com ROS_PACKAGE_PATH=/home/sogu/Personal/motor_health_monitor /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process
+[2.625s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[2.625s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor' returned '8': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com ROS_PACKAGE_PATH=/home/sogu/Personal/motor_health_monitor /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process
+[2.625s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[2.625s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[2.625s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.637s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.637s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.637s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.648s] DEBUG:colcon.colcon_core.event_reactor:joined thread

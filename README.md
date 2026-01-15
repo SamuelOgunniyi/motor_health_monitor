@@ -27,6 +27,8 @@ A ROS 2 C++17 package for monitoring motor health and detecting faults through c
 
 The package consists of several key components:
 
+> **Design Decisions**: See [docs/DESIGN_DECISIONS.md](docs/DESIGN_DECISIONS.md) for detailed explanations of architectural choices, trade-offs, and alternatives considered.
+
 - **MotorHealthNode** - Main ROS 2 lifecycle node that orchestrates monitoring systems
 - **CmdOdomSync** - Detects synchronization state between command and odometry streams
 - **MotorFaultDetector** - Generic threshold-based fault detector with debouncing (works with any motor feedback type)
@@ -137,6 +139,26 @@ The node publishes to `/diagnostics` with:
 
 **Motor Fault:**
 - Command: 1.0 m/s, Odometry: 0.0 m/s → Difference: 1.0 → After 0.2s → Status: `ERROR`
+
+## Real-World Applications
+
+This package has been field-tested in production autonomous mobile robot deployments:
+
+### Service Robotics Application
+
+**Deployment Context**: Autonomous mobile robot operating in dynamic indoor environments  
+**Monitoring Requirements**:
+- Real-time motor health monitoring during autonomous navigation
+- Detection of PWM saturation when motors encounter unexpected resistance
+- Identification of command/odometry synchronization issues during complex maneuvers
+- Early warning system for motor degradation patterns
+
+**Outcomes**:
+- Reduced unexpected system failures through proactive fault detection
+- Enabled data-driven maintenance scheduling based on fault frequency trends
+- Improved operational reliability in mission-critical applications
+
+**Note**: This ROS 2 version represents a complete architectural redesign from an earlier ROS 1 implementation, incorporating generic fault detection, pluggable controllers, and enhanced diagnostic capabilities.
 
 ## Requirements
 
@@ -317,7 +339,7 @@ See `docs/custom_motor_controller_example.hpp` for a complete example.
 
 ## Testing
 
-The package includes comprehensive unit tests:
+The package includes comprehensive unit tests and integration tests:
 
 ```bash
 # Build with tests
@@ -330,13 +352,26 @@ colcon test --packages-select motor_health_monitor
 colcon test-result --verbose
 ```
 
-### Test Coverage
+### Unit Tests
+
+Unit tests use mock objects to test individual components in isolation:
 
 - **CmdOdomSync** (10 tests) - Synchronization state detection, boundary conditions, NaN/Inf handling
 - **MotorFaultDetector** (18 tests) - Fault detection logic, timer behavior, configuration updates, threshold types (absolute_value, upper_limit, lower_limit)
 - **MotorControllerFactory** (7 tests) - Factory pattern, registration, creation, error handling
+- **MotorHealthNode** (6 tests) - Lifecycle state management, update function behavior, helper function integration
 
-Total: **35 tests** covering normal operation, edge cases, and error conditions.
+**Unit Test Total: 41 tests** covering normal operation, edge cases, and error conditions.
+
+### Integration Tests
+
+Integration tests exercise the full system with real ROS 2 topics and the actual `RobotDriveMotorController`:
+
+- **IntegrationControllerTest** (5 tests) - Real controller configuration, motor PWM subscription, fault detection with actual message flow, end-to-end system behavior
+
+**Integration Test Total: 5 tests** verifying the complete system works correctly with real controllers and ROS 2 message passing.
+
+**Grand Total: 46 tests** (41 unit + 5 integration)
 
 ## Project Structure
 
@@ -354,9 +389,12 @@ motor_health_monitor/
 │   ├── cmd_odom_sync.cpp
 │   └── motor_health_node.cpp
 ├── test/
-│   ├── mock_motor_controller.hpp          # Mock for testing
-│   ├── test_cmd_odom_sync.cpp
-│   └── test_motor_fault_detector.cpp
+│   ├── mock_motor_controller.hpp          # Mock for unit testing
+│   ├── test_cmd_odom_sync.cpp            # Unit tests
+│   ├── test_motor_fault_detector.cpp     # Unit tests
+│   ├── test_motor_controller_factory.cpp  # Unit tests
+│   ├── test_motor_health_node.cpp        # Unit tests
+│   └── test_integration_controller.cpp   # Integration tests with real controller
 ├── docs/
 │   └── custom_motor_controller_example.hpp # Example custom controller
 ├── launch/

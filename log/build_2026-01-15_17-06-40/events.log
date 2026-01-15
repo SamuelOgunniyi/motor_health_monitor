@@ -1,0 +1,214 @@
+[0.000000] (-) TimerEvent: {}
+[0.000144] (motor_health_monitor) JobQueued: {'identifier': 'motor_health_monitor', 'dependencies': OrderedDict()}
+[0.000476] (motor_health_monitor) JobStarted: {'identifier': 'motor_health_monitor'}
+[0.005834] (motor_health_monitor) JobProgress: {'identifier': 'motor_health_monitor', 'progress': 'cmake'}
+[0.006439] (motor_health_monitor) JobProgress: {'identifier': 'motor_health_monitor', 'progress': 'build'}
+[0.007169] (motor_health_monitor) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor', '--', '-j28', '-l28'], 'cwd': '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/sogu/Personal/motor_health_monitor', 'KDE_FULL_SESSION': 'true', 'CURSOR_EXTENSION_HOST_ROLE': 'agent-exec', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'USER': 'sogu', 'PAM_KWALLET5_LOGIN': '/run/user/1000/kwallet5.socket', 'VSCODE_NLS_CONFIG': '{"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"/usr/share/cursor/resources/app/out/nls.messages.json","locale":"en-us","availableLanguages":{}}', 'QT_SCREEN_SCALE_FACTORS': 'eDP-1=2;DP-1=2;HDMI-1=2;DP-1-1=2;DP-1-2=2;DP-1-3=2;HDMI-1-0=2;DP-1-0=2;DP-1-1=2;DP-1-2=2;', 'XDG_SEAT': 'seat0', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'SSH_AGENT_PID': '3311', 'XDG_SESSION_TYPE': 'x11', 'KWIN_FORCE_SW_CURSOR': '1', 'XCURSOR_SIZE': '24', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/sogu', 'CHROME_DESKTOP': 'cursor.desktop', 'KDE_APPLICATIONS_AS_SCOPE': '1', 'OLDPWD': '/home/sogu/Personal/motor_health_monitor', 'DESKTOP_SESSION': 'plasma', 'VSCODE_IPC_HOOK': '/run/user/1000/vscode-6c7a1091-2.3.-main.sock', 'ROS_PYTHON_VERSION': '3', 'GTK_RC_FILES': '/etc/gtk/gtkrc:/home/sogu/.gtkrc:/home/sogu/.config/gtkrc', 'GTK_MODULES': 'gail:atk-bridge', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'SDL_IM_MODULE': 'maliit', 'KDE_SESSION_VERSION': '5', 'MANAGERPID': '3212', 'SYSTEMD_EXEC_PID': '3402', 'SSH_ASKPASS': '/usr/bin/ksshaskpass', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873', 'VSCODE_CRASH_REPORTER_PROCESS_TYPE': 'extensionHost', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'maliit', 'LOGNAME': 'sogu', 'FORCE_COLOR': '0', '__GL_THREADED_OPTIMIZATIONS': '0', 'QT_AUTO_SCREEN_SCALE_FACTOR': '0', 'JOURNAL_STREAM': '9:20026', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/background.slice/plasma-kglobalaccel.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'TERM': 'dumb', 'EVERYSPHERE_RIPGREP_PATH': '/usr/share/cursor/resources/app/node_modules/@vscode/ripgrep/bin/rg', 'XDG_SESSION_ID': '6', 'KDE_SYSTEMD_LAUNCHER': '0', 'COMPOSER_NO_INTERACTION': '1', 'GTK2_RC_FILES': '/etc/gtk-2.0/gtkrc:/home/sogu/.gtkrc-2.0:/home/sogu/.config/gtkrc-2.0', 'PATH': '/home/sogu/.local/bin:/home/sogu/.local/bin:/home/sogu/.local/bin:/opt/ros/jazzy/bin:/home/sogu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'INVOCATION_ID': '0e0f10bbf47942cd988d43a866fd9f7f', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session1', 'VSCODE_PROCESS_TITLE': 'extension-host (agent-exec) [1-3]', 'XDG_RUNTIME_DIR': '/run/user/1000', 'XCURSOR_THEME': 'capitaine-cursors', 'GDK_BACKEND': 'x11', 'CURSOR_AGENT': '1', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'KDE', 'XDG_SESSION_DESKTOP': 'KDE', 'XAUTHORITY': '/tmp/xauth_nLriuT', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SBX_CHROME_API_RQ': '1', 'CURSOR_TRACE_ID': 'deb51864dbcf47be9b81541216d796c9', 'SSH_AUTH_SOCK': '/tmp/ssh-L1LlkJU05yno/agent.3260', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'CURSOR_CLI_MODE': 'local', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'KDE', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:573b2858-04a1-426b-ba27-ebf132c8b6c5', 'QT_ACCESSIBILITY': '1', 'CURSOR_CLI': 'ELECTRON_RUN_AS_NODE=1 "/usr/share/cursor/bin/../cursor" "/usr/share/cursor/bin/../resources/app/out/cli.js"', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'maliit', 'XDG_VTNR': '2', 'PWD': '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor', 'VSCODE_CLI': '1', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/home/sogu/.config/kdedefaults:/etc/xdg/xdg-plasma:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings', 'VSCODE_CODE_CACHE_PATH': '/home/sogu/.config/Cursor/CachedData/cf8353edc265f5e46b798bfb276861d0bf3bf120', 'CLUTTER_IM_MODULE': 'maliit', 'XDG_DATA_DIRS': '/usr/share/plasma:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'KDE_SESSION_UID': '1000', 'COLCON': '1', '_ZO_DOCTOR': '0', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'SANDBOX_LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'ELECTRON_NO_ATTACH_CONSOLE': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'VSCODE_PID': '233616'}), 'shell': False}
+[0.033172] (motor_health_monitor) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.099912] (-) TimerEvent: {}
+[0.200088] (-) TimerEvent: {}
+[0.213612] (motor_health_monitor) StdoutLine: {'line': b'-- Found rclcpp: 28.1.13 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.233186] (motor_health_monitor) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.239395] (motor_health_monitor) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.247176] (motor_health_monitor) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.256485] (motor_health_monitor) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.300274] (-) TimerEvent: {}
+[0.304505] (motor_health_monitor) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.305328] (motor_health_monitor) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.362977] (motor_health_monitor) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.400464] (-) TimerEvent: {}
+[0.408979] (motor_health_monitor) StdoutLine: {'line': b'-- Found rclcpp_lifecycle: 28.1.13 (/opt/ros/jazzy/share/rclcpp_lifecycle/cmake)\n'}
+[0.429058] (motor_health_monitor) StdoutLine: {'line': b'-- Found rclcpp_components: 28.1.13 (/opt/ros/jazzy/share/rclcpp_components/cmake)\n'}
+[0.449133] (motor_health_monitor) StdoutLine: {'line': b'-- Found geometry_msgs: 5.3.6 (/opt/ros/jazzy/share/geometry_msgs/cmake)\n'}
+[0.471297] (motor_health_monitor) StdoutLine: {'line': b'-- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)\n'}
+[0.490833] (motor_health_monitor) StdoutLine: {'line': b'-- Found diagnostic_msgs: 5.3.6 (/opt/ros/jazzy/share/diagnostic_msgs/cmake)\n'}
+[0.500587] (-) TimerEvent: {}
+[0.507055] (motor_health_monitor) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[0.572600] (motor_health_monitor) StdoutLine: {'line': b"-- Found gtest sources under '/opt/ros/jazzy/src/gtest_vendor': C++ tests using 'Google Test' will be built\n"}
+[0.580567] (motor_health_monitor) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[0.600755] (-) TimerEvent: {}
+[0.615708] (motor_health_monitor) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[0.616009] (motor_health_monitor) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /home/sogu/Personal/motor_health_monitor/include\n'}
+[0.616124] (motor_health_monitor) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[0.649660] (motor_health_monitor) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[0.649847] (motor_health_monitor) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[0.654053] (motor_health_monitor) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[0.654225] (motor_health_monitor) StdoutLine: {'line': b"-- Configured 'flake8' exclude dirs and/or files: \n"}
+[0.662591] (motor_health_monitor) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.666926] (motor_health_monitor) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[0.700872] (motor_health_monitor) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[0.701081] (-) TimerEvent: {}
+[0.701102] (motor_health_monitor) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[0.705517] (motor_health_monitor) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.706054] (motor_health_monitor) StdoutLine: {'line': b'-- Configuring done (0.7s)\n'}
+[0.728234] (motor_health_monitor) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[0.735709] (motor_health_monitor) StdoutLine: {'line': b'-- Build files have been written to: /home/sogu/Personal/motor_health_monitor/build/motor_health_monitor\n'}
+[0.770067] (motor_health_monitor) StdoutLine: {'line': b'[ 13%] Built target gtest_main\n'}
+[0.771948] (motor_health_monitor) StdoutLine: {'line': b'[ 26%] Built target gtest\n'}
+[0.775798] (motor_health_monitor) StdoutLine: {'line': b'[ 33%] Building CXX object CMakeFiles/motor_health_component.dir/src/motor_health_node.cpp.o\n'}
+[0.801204] (-) TimerEvent: {}
+[0.901427] (-) TimerEvent: {}
+[1.001647] (-) TimerEvent: {}
+[1.101922] (-) TimerEvent: {}
+[1.202102] (-) TimerEvent: {}
+[1.302276] (-) TimerEvent: {}
+[1.402494] (-) TimerEvent: {}
+[1.502703] (-) TimerEvent: {}
+[1.602904] (-) TimerEvent: {}
+[1.703122] (-) TimerEvent: {}
+[1.803338] (-) TimerEvent: {}
+[1.903558] (-) TimerEvent: {}
+[2.003807] (-) TimerEvent: {}
+[2.104002] (-) TimerEvent: {}
+[2.204206] (-) TimerEvent: {}
+[2.304411] (-) TimerEvent: {}
+[2.404699] (-) TimerEvent: {}
+[2.504938] (-) TimerEvent: {}
+[2.605196] (-) TimerEvent: {}
+[2.705402] (-) TimerEvent: {}
+[2.805580] (-) TimerEvent: {}
+[2.905799] (-) TimerEvent: {}
+[3.005974] (-) TimerEvent: {}
+[3.106153] (-) TimerEvent: {}
+[3.206365] (-) TimerEvent: {}
+[3.306577] (-) TimerEvent: {}
+[3.406822] (-) TimerEvent: {}
+[3.507001] (-) TimerEvent: {}
+[3.607200] (-) TimerEvent: {}
+[3.707417] (-) TimerEvent: {}
+[3.807661] (-) TimerEvent: {}
+[3.907852] (-) TimerEvent: {}
+[4.008033] (-) TimerEvent: {}
+[4.108249] (-) TimerEvent: {}
+[4.208461] (-) TimerEvent: {}
+[4.308632] (-) TimerEvent: {}
+[4.408837] (-) TimerEvent: {}
+[4.509030] (-) TimerEvent: {}
+[4.609230] (-) TimerEvent: {}
+[4.709424] (-) TimerEvent: {}
+[4.809635] (-) TimerEvent: {}
+[4.909854] (-) TimerEvent: {}
+[5.010023] (-) TimerEvent: {}
+[5.110221] (-) TimerEvent: {}
+[5.210452] (-) TimerEvent: {}
+[5.310653] (-) TimerEvent: {}
+[5.410821] (-) TimerEvent: {}
+[5.510991] (-) TimerEvent: {}
+[5.611157] (-) TimerEvent: {}
+[5.711325] (-) TimerEvent: {}
+[5.811606] (-) TimerEvent: {}
+[5.911820] (-) TimerEvent: {}
+[6.012046] (-) TimerEvent: {}
+[6.112252] (-) TimerEvent: {}
+[6.212473] (-) TimerEvent: {}
+[6.312686] (-) TimerEvent: {}
+[6.412821] (-) TimerEvent: {}
+[6.512991] (-) TimerEvent: {}
+[6.613194] (-) TimerEvent: {}
+[6.713385] (-) TimerEvent: {}
+[6.813597] (-) TimerEvent: {}
+[6.913782] (-) TimerEvent: {}
+[7.013953] (-) TimerEvent: {}
+[7.114181] (-) TimerEvent: {}
+[7.214396] (-) TimerEvent: {}
+[7.245330] (motor_health_monitor) StdoutLine: {'line': b'[ 40%] Linking CXX shared library libmotor_health_component.so\n'}
+[7.314501] (-) TimerEvent: {}
+[7.414709] (-) TimerEvent: {}
+[7.514949] (-) TimerEvent: {}
+[7.529117] (motor_health_monitor) StdoutLine: {'line': b'[ 46%] Built target motor_health_component\n'}
+[7.548018] (motor_health_monitor) StdoutLine: {'line': b'[ 53%] Building CXX object CMakeFiles/test_motor_health_node.dir/test/test_motor_health_node.cpp.o\n'}
+[7.551386] (motor_health_monitor) StdoutLine: {'line': b'[ 73%] Building CXX object CMakeFiles/test_motor_fault_detector.dir/test/test_motor_fault_detector.cpp.o\n'}
+[7.551588] (motor_health_monitor) StdoutLine: {'line': b'[ 73%] Building CXX object CMakeFiles/test_motor_controller_factory.dir/test/test_motor_controller_factory.cpp.o\n'}
+[7.551684] (motor_health_monitor) StdoutLine: {'line': b'[ 73%] Linking CXX executable test_cmd_odom_sync\n'}
+[7.615037] (-) TimerEvent: {}
+[7.715186] (-) TimerEvent: {}
+[7.773007] (motor_health_monitor) StdoutLine: {'line': b'[ 80%] Built target test_cmd_odom_sync\n'}
+[7.815304] (-) TimerEvent: {}
+[7.915491] (-) TimerEvent: {}
+[8.015670] (-) TimerEvent: {}
+[8.115965] (-) TimerEvent: {}
+[8.216140] (-) TimerEvent: {}
+[8.316356] (-) TimerEvent: {}
+[8.416566] (-) TimerEvent: {}
+[8.516816] (-) TimerEvent: {}
+[8.616995] (-) TimerEvent: {}
+[8.717206] (-) TimerEvent: {}
+[8.817388] (-) TimerEvent: {}
+[8.917592] (-) TimerEvent: {}
+[9.017779] (-) TimerEvent: {}
+[9.058768] (motor_health_monitor) StderrLine: {'line': b'In file included from /opt/ros/jazzy/src/gtest_vendor/include/gtest/gtest-printers.h:122,\n'}
+[9.058976] (motor_health_monitor) StderrLine: {'line': b'                 from /opt/ros/jazzy/src/gtest_vendor/include/gtest/gtest-matchers.h:49,\n'}
+[9.059060] (motor_health_monitor) StderrLine: {'line': b'                 from /opt/ros/jazzy/src/gtest_vendor/include/gtest/internal/gtest-death-test-internal.h:47,\n'}
+[9.059142] (motor_health_monitor) StderrLine: {'line': b'                 from /opt/ros/jazzy/src/gtest_vendor/include/gtest/gtest-death-test.h:43,\n'}
+[9.059223] (motor_health_monitor) StderrLine: {'line': b'                 from /opt/ros/jazzy/src/gtest_vendor/include/gtest/gtest.h:65,\n'}
+[9.059302] (motor_health_monitor) StderrLine: {'line': b'                 from /home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:19:\n'}
+[9.059379] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp: In member function \xe2\x80\x98virtual void MotorHealthNodeTest_UpdateWhenInactiveDoesNothing_Test::TestBody()\xe2\x80\x99:\n'}
+[9.059542] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:45:34: error: \xe2\x80\x98void motor_health_monitor::MotorHealthNode::update()\xe2\x80\x99 is private within this context\n'}
+[9.059619] (motor_health_monitor) StderrLine: {'line': b'   45 |     ASSERT_NO_THROW(node_->update());\n'}
+[9.059692] (motor_health_monitor) StderrLine: {'line': b'      |                     ~~~~~~~~~~~~~^~\n'}
+[9.059775] (motor_health_monitor) StderrLine: {'line': b'In file included from /home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:23:\n'}
+[9.059853] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_health_node.hpp:64:8: note: declared private here\n'}
+[9.059936] (motor_health_monitor) StderrLine: {'line': b'   64 |   void update();\n'}
+[9.060009] (motor_health_monitor) StderrLine: {'line': b'      |        ^~~~~~\n'}
+[9.060084] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp: In member function \xe2\x80\x98virtual void MotorHealthNodeTest_UpdateWhenConfigured_Test::TestBody()\xe2\x80\x99:\n'}
+[9.060260] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:54:34: error: \xe2\x80\x98void motor_health_monitor::MotorHealthNode::update()\xe2\x80\x99 is private within this context\n'}
+[9.060340] (motor_health_monitor) StderrLine: {'line': b'   54 |     ASSERT_NO_THROW(node_->update());\n'}
+[9.060413] (motor_health_monitor) StderrLine: {'line': b'      |                     ~~~~~~~~~~~~~^~\n'}
+[9.060485] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_health_node.hpp:64:8: note: declared private here\n'}
+[9.060562] (motor_health_monitor) StderrLine: {'line': b'   64 |   void update();\n'}
+[9.060636] (motor_health_monitor) StderrLine: {'line': b'      |        ^~~~~~\n'}
+[9.060708] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp: In member function \xe2\x80\x98virtual void MotorHealthNodeTest_UpdateWhenActivated_Test::TestBody()\xe2\x80\x99:\n'}
+[9.060799] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:65:34: error: \xe2\x80\x98void motor_health_monitor::MotorHealthNode::update()\xe2\x80\x99 is private within this context\n'}
+[9.060931] (motor_health_monitor) StderrLine: {'line': b'   65 |     ASSERT_NO_THROW(node_->update());\n'}
+[9.061005] (motor_health_monitor) StderrLine: {'line': b'      |                     ~~~~~~~~~~~~~^~\n'}
+[9.061079] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_health_node.hpp:64:8: note: declared private here\n'}
+[9.061156] (motor_health_monitor) StderrLine: {'line': b'   64 |   void update();\n'}
+[9.061228] (motor_health_monitor) StderrLine: {'line': b'      |        ^~~~~~\n'}
+[9.061300] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp: In member function \xe2\x80\x98virtual void MotorHealthNodeTest_UpdateHandlesNoMessages_Test::TestBody()\xe2\x80\x99:\n'}
+[9.061383] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:75:34: error: \xe2\x80\x98void motor_health_monitor::MotorHealthNode::update()\xe2\x80\x99 is private within this context\n'}
+[9.061459] (motor_health_monitor) StderrLine: {'line': b'   75 |     ASSERT_NO_THROW(node_->update());\n'}
+[9.061569] (motor_health_monitor) StderrLine: {'line': b'      |                     ~~~~~~~~~~~~~^~\n'}
+[9.061646] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_health_node.hpp:64:8: note: declared private here\n'}
+[9.061720] (motor_health_monitor) StderrLine: {'line': b'   64 |   void update();\n'}
+[9.061834] (motor_health_monitor) StderrLine: {'line': b'      |        ^~~~~~\n'}
+[9.061911] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp: In member function \xe2\x80\x98virtual void MotorHealthNodeTest_MultipleUpdates_Test::TestBody()\xe2\x80\x99:\n'}
+[9.061986] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:84:34: error: \xe2\x80\x98void motor_health_monitor::MotorHealthNode::update()\xe2\x80\x99 is private within this context\n'}
+[9.062089] (motor_health_monitor) StderrLine: {'line': b'   84 |     ASSERT_NO_THROW(node_->update());\n'}
+[9.062165] (motor_health_monitor) StderrLine: {'line': b'      |                     ~~~~~~~~~~~~~^~\n'}
+[9.062241] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_health_node.hpp:64:8: note: declared private here\n'}
+[9.062314] (motor_health_monitor) StderrLine: {'line': b'   64 |   void update();\n'}
+[9.062392] (motor_health_monitor) StderrLine: {'line': b'      |        ^~~~~~\n'}
+[9.062464] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:86:34: error: \xe2\x80\x98void motor_health_monitor::MotorHealthNode::update()\xe2\x80\x99 is private within this context\n'}
+[9.062537] (motor_health_monitor) StderrLine: {'line': b'   86 |     ASSERT_NO_THROW(node_->update());\n'}
+[9.062609] (motor_health_monitor) StderrLine: {'line': b'      |                     ~~~~~~~~~~~~~^~\n'}
+[9.062684] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_health_node.hpp:64:8: note: declared private here\n'}
+[9.062769] (motor_health_monitor) StderrLine: {'line': b'   64 |   void update();\n'}
+[9.062877] (motor_health_monitor) StderrLine: {'line': b'      |        ^~~~~~\n'}
+[9.062955] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:88:34: error: \xe2\x80\x98void motor_health_monitor::MotorHealthNode::update()\xe2\x80\x99 is private within this context\n'}
+[9.063034] (motor_health_monitor) StderrLine: {'line': b'   88 |     ASSERT_NO_THROW(node_->update());\n'}
+[9.063107] (motor_health_monitor) StderrLine: {'line': b'      |                     ~~~~~~~~~~~~~^~\n'}
+[9.063181] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_health_node.hpp:64:8: note: declared private here\n'}
+[9.063256] (motor_health_monitor) StderrLine: {'line': b'   64 |   void update();\n'}
+[9.063329] (motor_health_monitor) StderrLine: {'line': b'      |        ^~~~~~\n'}
+[9.063408] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp: In member function \xe2\x80\x98virtual void MotorHealthNodeTest_UpdateAfterDeactivate_Test::TestBody()\xe2\x80\x99:\n'}
+[9.063481] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:98:34: error: \xe2\x80\x98void motor_health_monitor::MotorHealthNode::update()\xe2\x80\x99 is private within this context\n'}
+[9.063557] (motor_health_monitor) StderrLine: {'line': b'   98 |     ASSERT_NO_THROW(node_->update());\n'}
+[9.063629] (motor_health_monitor) StderrLine: {'line': b'      |                     ~~~~~~~~~~~~~^~\n'}
+[9.063705] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_health_node.hpp:64:8: note: declared private here\n'}
+[9.063786] (motor_health_monitor) StderrLine: {'line': b'   64 |   void update();\n'}
+[9.063858] (motor_health_monitor) StderrLine: {'line': b'      |        ^~~~~~\n'}
+[9.116082] (motor_health_monitor) StdoutLine: {'line': b'[ 86%] Linking CXX executable test_motor_fault_detector\n'}
+[9.117925] (-) TimerEvent: {}
+[9.218097] (-) TimerEvent: {}
+[9.234923] (motor_health_monitor) StdoutLine: {'line': b'[ 93%] Linking CXX executable test_motor_controller_factory\n'}
+[9.316932] (motor_health_monitor) StdoutLine: {'line': b'[ 93%] Built target test_motor_fault_detector\n'}
+[9.318191] (-) TimerEvent: {}
+[9.418358] (-) TimerEvent: {}
+[9.426373] (motor_health_monitor) StdoutLine: {'line': b'[ 93%] Built target test_motor_controller_factory\n'}
+[9.518471] (-) TimerEvent: {}
+[9.574517] (motor_health_monitor) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/test_motor_health_node.dir/build.make:76: CMakeFiles/test_motor_health_node.dir/test/test_motor_health_node.cpp.o] Error 1\n'}
+[9.574787] (motor_health_monitor) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:275: CMakeFiles/test_motor_health_node.dir/all] Error 2\n'}
+[9.575061] (motor_health_monitor) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[9.577052] (motor_health_monitor) CommandEnded: {'returncode': 2}
+[9.588856] (motor_health_monitor) JobEnded: {'identifier': 'motor_health_monitor', 'rc': 2}
+[9.599131] (-) EventReactorShutdown: {}

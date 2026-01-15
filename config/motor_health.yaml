@@ -15,3 +15,5 @@ motor_health_monitor:
     motor_message_type: ""
     motor_pwm_field: ""
     stale_data_timeout: 1.0
+    subscription_queue_depth: 1
+    motor_subscription_queue_depth: 1

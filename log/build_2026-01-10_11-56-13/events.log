@@ -1,0 +1,342 @@
+[0.000000] (-) TimerEvent: {}
+[0.000655] (motor_health_monitor) JobQueued: {'identifier': 'motor_health_monitor', 'dependencies': OrderedDict()}
+[0.000786] (motor_health_monitor) JobStarted: {'identifier': 'motor_health_monitor'}
+[0.008810] (motor_health_monitor) JobProgress: {'identifier': 'motor_health_monitor', 'progress': 'cmake'}
+[0.009709] (motor_health_monitor) JobProgress: {'identifier': 'motor_health_monitor', 'progress': 'build'}
+[0.010420] (motor_health_monitor) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor', '--', '-j28', '-l28'], 'cwd': '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/sogu/Personal/motor_health_monitor', 'KDE_FULL_SESSION': 'true', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'USER': 'sogu', 'PAM_KWALLET5_LOGIN': '/run/user/1000/kwallet5.socket', 'VSCODE_NLS_CONFIG': '{"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"/usr/share/cursor/resources/app/out/nls.messages.json","locale":"en-us","availableLanguages":{}}', 'QT_SCREEN_SCALE_FACTORS': 'eDP-1=2;DP-1=2;HDMI-1=2;DP-1-1=2;DP-1-2=2;DP-1-3=2;HDMI-1-0=2;DP-1-0=2;DP-1-1=2;DP-1-2=2;', 'XDG_SEAT': 'seat0', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'SSH_AGENT_PID': '2415', 'XDG_SESSION_TYPE': 'x11', 'KWIN_FORCE_SW_CURSOR': '1', 'XCURSOR_SIZE': '24', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/sogu', 'CHROME_DESKTOP': 'cursor.desktop', 'KDE_APPLICATIONS_AS_SCOPE': '1', 'OLDPWD': '/home/sogu/Personal/motor_health_monitor', 'DESKTOP_SESSION': 'plasma', 'VSCODE_IPC_HOOK': '/run/user/1000/vscode-6c7a1091-2.3.-main.sock', 'ROS_PYTHON_VERSION': '3', 'GTK_RC_FILES': '/etc/gtk/gtkrc:/home/sogu/.gtkrc:/home/sogu/.config/gtkrc', 'GTK_MODULES': 'gail:atk-bridge', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'SDL_IM_MODULE': 'maliit', 'KDE_SESSION_VERSION': '5', 'MANAGERPID': '2318', 'SYSTEMD_EXEC_PID': '2488', 'SSH_ASKPASS': '/usr/bin/ksshaskpass', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873', 'VSCODE_CRASH_REPORTER_PROCESS_TYPE': 'extensionHost', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'VSCODE_L10N_BUNDLE_LOCATION': '', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'maliit', 'LOGNAME': 'sogu', 'FORCE_COLOR': '0', '__GL_THREADED_OPTIMIZATIONS': '0', 'QT_AUTO_SCREEN_SCALE_FACTOR': '0', 'JOURNAL_STREAM': '9:18955', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/plasma-ksmserver.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'TERM': 'dumb', 'EVERYSPHERE_RIPGREP_PATH': '/usr/share/cursor/resources/app/node_modules/@vscode/ripgrep/bin/rg', 'XDG_SESSION_ID': '3', 'KDE_SYSTEMD_LAUNCHER': '0', 'COMPOSER_NO_INTERACTION': '1', 'GTK2_RC_FILES': '/etc/gtk-2.0/gtkrc:/home/sogu/.gtkrc-2.0:/home/sogu/.config/gtkrc-2.0', 'PATH': '/home/sogu/.local/bin:/home/sogu/.local/bin:/home/sogu/.local/bin:/opt/ros/jazzy/bin:/home/sogu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/dev:@/tmp/.ICE-unix/2488,unix/dev:/tmp/.ICE-unix/2488', 'INVOCATION_ID': '4def17a26b774b758213c2a0cf0a8373', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session1', 'VSCODE_PROCESS_TITLE': 'extension-host  [1-1]', 'XDG_RUNTIME_DIR': '/run/user/1000', 'XCURSOR_THEME': 'capitaine-cursors', 'GDK_BACKEND': 'x11', 'ICEAUTHORITY': '/run/user/1000/iceauth_nypLar', 'CURSOR_AGENT': '1', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'KDE', 'XDG_SESSION_DESKTOP': 'KDE', 'XAUTHORITY': '/tmp/xauth_ZPuZlI', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SBX_CHROME_API_RQ': '1', 'CURSOR_TRACE_ID': '00d10617f53443f8b3bb1830c8e8bfd5', 'SSH_AUTH_SOCK': '/tmp/ssh-sNMFfSPnuCe0/agent.2364', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'CURSOR_CLI_MODE': 'local', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'KDE', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:d17db92e-a07a-4d87-9d46-d5965fb0f7f3', 'QT_ACCESSIBILITY': '1', 'CURSOR_CLI': 'ELECTRON_RUN_AS_NODE=1 "/usr/share/cursor/bin/../cursor" "/usr/share/cursor/bin/../resources/app/out/cli.js"', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'maliit', 'XDG_VTNR': '2', 'PWD': '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor', 'VSCODE_CLI': '1', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/home/sogu/.config/kdedefaults:/etc/xdg/xdg-plasma:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings', 'VSCODE_CODE_CACHE_PATH': '/home/sogu/.config/Cursor/CachedData/4ca9b38c6c97d4243bf0c61e51426667cb964bd0', 'CLUTTER_IM_MODULE': 'maliit', 'XDG_DATA_DIRS': '/usr/share/plasma:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'KDE_SESSION_UID': '1000', 'COLCON': '1', '_ZO_DOCTOR': '0', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'SANDBOX_LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'ELECTRON_NO_ATTACH_CONSOLE': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'VSCODE_PID': '3380'}), 'shell': False}
+[0.086124] (motor_health_monitor) StdoutLine: {'line': b'[ 23%] Built target gtest_main\n'}
+[0.086515] (motor_health_monitor) StdoutLine: {'line': b'[ 30%] Built target gtest\n'}
+[0.095182] (motor_health_monitor) StdoutLine: {'line': b'[ 38%] Building CXX object CMakeFiles/motor_health_component.dir/src/motor_health_node.cpp.o\n'}
+[0.099721] (-) TimerEvent: {}
+[0.200085] (-) TimerEvent: {}
+[0.300361] (-) TimerEvent: {}
+[0.400734] (-) TimerEvent: {}
+[0.500986] (-) TimerEvent: {}
+[0.601257] (-) TimerEvent: {}
+[0.701519] (-) TimerEvent: {}
+[0.801759] (-) TimerEvent: {}
+[0.902041] (-) TimerEvent: {}
+[1.002372] (-) TimerEvent: {}
+[1.102698] (-) TimerEvent: {}
+[1.202955] (-) TimerEvent: {}
+[1.303224] (-) TimerEvent: {}
+[1.403501] (-) TimerEvent: {}
+[1.503757] (-) TimerEvent: {}
+[1.604041] (-) TimerEvent: {}
+[1.704279] (-) TimerEvent: {}
+[1.804573] (-) TimerEvent: {}
+[1.904829] (-) TimerEvent: {}
+[2.005131] (-) TimerEvent: {}
+[2.105400] (-) TimerEvent: {}
+[2.205737] (-) TimerEvent: {}
+[2.305990] (-) TimerEvent: {}
+[2.406239] (-) TimerEvent: {}
+[2.506503] (-) TimerEvent: {}
+[2.606751] (-) TimerEvent: {}
+[2.707103] (-) TimerEvent: {}
+[2.807336] (-) TimerEvent: {}
+[2.907657] (-) TimerEvent: {}
+[3.007936] (-) TimerEvent: {}
+[3.108202] (-) TimerEvent: {}
+[3.208526] (-) TimerEvent: {}
+[3.308781] (-) TimerEvent: {}
+[3.409094] (-) TimerEvent: {}
+[3.509377] (-) TimerEvent: {}
+[3.609731] (-) TimerEvent: {}
+[3.710031] (-) TimerEvent: {}
+[3.810291] (-) TimerEvent: {}
+[3.910473] (-) TimerEvent: {}
+[4.010694] (-) TimerEvent: {}
+[4.110890] (-) TimerEvent: {}
+[4.211123] (-) TimerEvent: {}
+[4.311330] (-) TimerEvent: {}
+[4.411536] (-) TimerEvent: {}
+[4.511716] (-) TimerEvent: {}
+[4.611895] (-) TimerEvent: {}
+[4.712101] (-) TimerEvent: {}
+[4.812288] (-) TimerEvent: {}
+[4.912494] (-) TimerEvent: {}
+[5.012700] (-) TimerEvent: {}
+[5.112911] (-) TimerEvent: {}
+[5.213180] (-) TimerEvent: {}
+[5.313365] (-) TimerEvent: {}
+[5.413569] (-) TimerEvent: {}
+[5.513773] (-) TimerEvent: {}
+[5.613942] (-) TimerEvent: {}
+[5.714152] (-) TimerEvent: {}
+[5.814337] (-) TimerEvent: {}
+[5.914532] (-) TimerEvent: {}
+[6.014734] (-) TimerEvent: {}
+[6.114919] (-) TimerEvent: {}
+[6.215096] (-) TimerEvent: {}
+[6.315270] (-) TimerEvent: {}
+[6.415469] (-) TimerEvent: {}
+[6.515660] (-) TimerEvent: {}
+[6.615852] (-) TimerEvent: {}
+[6.716055] (-) TimerEvent: {}
+[6.816235] (-) TimerEvent: {}
+[6.916412] (-) TimerEvent: {}
+[7.016618] (-) TimerEvent: {}
+[7.116804] (-) TimerEvent: {}
+[7.217008] (-) TimerEvent: {}
+[7.317198] (-) TimerEvent: {}
+[7.417380] (-) TimerEvent: {}
+[7.517650] (-) TimerEvent: {}
+[7.617858] (-) TimerEvent: {}
+[7.718141] (-) TimerEvent: {}
+[7.818327] (-) TimerEvent: {}
+[7.918528] (-) TimerEvent: {}
+[8.018721] (-) TimerEvent: {}
+[8.118979] (-) TimerEvent: {}
+[8.219121] (-) TimerEvent: {}
+[8.319293] (-) TimerEvent: {}
+[8.419481] (-) TimerEvent: {}
+[8.519684] (-) TimerEvent: {}
+[8.619898] (-) TimerEvent: {}
+[8.720127] (-) TimerEvent: {}
+[8.820322] (-) TimerEvent: {}
+[8.920524] (-) TimerEvent: {}
+[9.020764] (-) TimerEvent: {}
+[9.120953] (-) TimerEvent: {}
+[9.221151] (-) TimerEvent: {}
+[9.321325] (-) TimerEvent: {}
+[9.421540] (-) TimerEvent: {}
+[9.521736] (-) TimerEvent: {}
+[9.621926] (-) TimerEvent: {}
+[9.722132] (-) TimerEvent: {}
+[9.822297] (-) TimerEvent: {}
+[9.922477] (-) TimerEvent: {}
+[10.022676] (-) TimerEvent: {}
+[10.122879] (-) TimerEvent: {}
+[10.172612] (motor_health_monitor) StdoutLine: {'line': b'[ 46%] Linking CXX shared library libmotor_health_component.so\n'}
+[10.223034] (-) TimerEvent: {}
+[10.323257] (-) TimerEvent: {}
+[10.423501] (-) TimerEvent: {}
+[10.523768] (-) TimerEvent: {}
+[10.623996] (-) TimerEvent: {}
+[10.724156] (-) TimerEvent: {}
+[10.771816] (motor_health_monitor) StdoutLine: {'line': b'[ 53%] Built target motor_health_component\n'}
+[10.803426] (motor_health_monitor) StdoutLine: {'line': b'[ 61%] Building CXX object CMakeFiles/test_motor_fault_detector.dir/test/test_motor_fault_detector.cpp.o\n'}
+[10.803668] (motor_health_monitor) StdoutLine: {'line': b'[ 69%] Building CXX object CMakeFiles/test_cmd_odom_sync.dir/test/test_cmd_odom_sync.cpp.o\n'}
+[10.803991] (motor_health_monitor) StdoutLine: {'line': b'[ 76%] Building CXX object CMakeFiles/test_velocity_diff_controller.dir/test/test_velocity_diff_controller.cpp.o\n'}
+[10.824253] (-) TimerEvent: {}
+[10.924442] (-) TimerEvent: {}
+[11.024699] (-) TimerEvent: {}
+[11.124897] (-) TimerEvent: {}
+[11.225109] (-) TimerEvent: {}
+[11.325314] (-) TimerEvent: {}
+[11.425514] (-) TimerEvent: {}
+[11.525732] (-) TimerEvent: {}
+[11.602714] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp: In member function \xe2\x80\x98virtual void MotorFaultDetectorTest_NoFaultBelowLimit_Test::TestBody()\xe2\x80\x99:\n'}
+[11.602952] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:34:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.603031] (motor_health_monitor) StderrLine: {'line': b'   34 |     detector_->update(0.5, 0.0);\n'}
+[11.603110] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~\n'}
+[11.603173] (motor_health_monitor) StderrLine: {'line': b'In file included from /home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:2:\n'}
+[11.603238] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.603307] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.603367] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.607150] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.607478] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:37:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.607636] (motor_health_monitor) StderrLine: {'line': b'   37 |     detector_->update(0.5, 1.0);\n'}
+[11.607706] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~\n'}
+[11.607771] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.607835] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.607895] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.607954] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.608485] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp: In member function \xe2\x80\x98virtual void MotorFaultDetectorTest_NoFaultAtLimit_Test::TestBody()\xe2\x80\x99:\n'}
+[11.608735] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:42:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.608940] (motor_health_monitor) StderrLine: {'line': b'   42 |     detector_->update(0.95, 0.0);\n'}
+[11.609128] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~~\n'}
+[11.609215] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.609283] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.609349] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.609413] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.609796] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp: In member function \xe2\x80\x98virtual void MotorFaultDetectorTest_FaultAfterDuration_Test::TestBody()\xe2\x80\x99:\n'}
+[11.609884] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:47:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.609959] (motor_health_monitor) StderrLine: {'line': b'   47 |     detector_->update(1.0, 0.0);\n'}
+[11.610020] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~\n'}
+[11.610099] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.610165] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.610222] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.610279] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.610342] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:50:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.610404] (motor_health_monitor) StderrLine: {'line': b'   50 |     detector_->update(1.0, 0.1);\n'}
+[11.610471] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~\n'}
+[11.610536] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.610602] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.610661] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.610723] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.610778] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:53:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.611075] (motor_health_monitor) StderrLine: {'line': b'   53 |     detector_->update(1.0, 0.2);\n'}
+[11.611139] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~\n'}
+[11.611194] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.611253] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.611307] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.611364] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.611422] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:56:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.611517] (motor_health_monitor) StderrLine: {'line': b'   56 |     detector_->update(1.0, 0.3);\n'}
+[11.611683] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~\n'}
+[11.611742] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.611801] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.611858] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.611913] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.611968] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp: In member function \xe2\x80\x98virtual void MotorFaultDetectorTest_TimerResetOnDrop_Test::TestBody()\xe2\x80\x99:\n'}
+[11.612024] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:61:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.612099] (motor_health_monitor) StderrLine: {'line': b'   61 |     detector_->update(1.0, 0.0);\n'}
+[11.612160] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~\n'}
+[11.612217] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.612274] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.612334] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.612393] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.612452] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:64:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.612512] (motor_health_monitor) StderrLine: {'line': b'   64 |     detector_->update(1.0, 0.1);\n'}
+[11.612572] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~\n'}
+[11.612629] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.612719] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.612780] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.612842] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.612901] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:67:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.612962] (motor_health_monitor) StderrLine: {'line': b'   67 |     detector_->update(0.5, 0.15);\n'}
+[11.613019] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~~\n'}
+[11.613088] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.613299] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.613359] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.613420] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.613531] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:70:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.613589] (motor_health_monitor) StderrLine: {'line': b'   70 |     detector_->update(1.0, 0.2);\n'}
+[11.613644] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~\n'}
+[11.613697] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.613753] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.613807] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.613863] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.613922] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:73:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.613978] (motor_health_monitor) StderrLine: {'line': b'   73 |     detector_->update(1.0, 0.4);\n'}
+[11.614031] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~\n'}
+[11.614091] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.614154] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.614212] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.614271] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.614330] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp: In member function \xe2\x80\x98virtual void MotorFaultDetectorTest_NegativeFeedback_Test::TestBody()\xe2\x80\x99:\n'}
+[11.614388] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:78:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.614449] (motor_health_monitor) StderrLine: {'line': b'   78 |     detector_->update(-1.0, 0.0);\n'}
+[11.614507] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~~\n'}
+[11.614566] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.614628] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.614687] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.614744] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.614803] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:81:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.614864] (motor_health_monitor) StderrLine: {'line': b'   81 |     detector_->update(-1.0, 0.2);\n'}
+[11.614942] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~~\n'}
+[11.615003] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.615069] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.615129] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.615346] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.615406] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp: In member function \xe2\x80\x98virtual void MotorFaultDetectorTest_SetConfig_Test::TestBody()\xe2\x80\x99:\n'}
+[11.615468] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:92:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.615528] (motor_health_monitor) StderrLine: {'line': b'   92 |     detector_->update(0.6, 0.0);\n'}
+[11.615589] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~\n'}
+[11.615650] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.615712] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.615776] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.615838] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.615896] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:95:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.615955] (motor_health_monitor) StderrLine: {'line': b'   95 |     detector_->update(0.6, 0.1);\n'}
+[11.616016] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~\n'}
+[11.616087] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.616263] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.616320] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.616378] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.616442] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp: In member function \xe2\x80\x98virtual void MotorFaultDetectorTest_LargeFeedbackValues_Test::TestBody()\xe2\x80\x99:\n'}
+[11.616505] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:100:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.616566] (motor_health_monitor) StderrLine: {'line': b'  100 |     detector_->update(100.0, 0.0);\n'}
+[11.616626] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~\n'}
+[11.616684] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.616743] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.616804] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.616865] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.616925] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:103:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.616984] (motor_health_monitor) StderrLine: {'line': b'  103 |     detector_->update(100.0, 0.2);\n'}
+[11.617046] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~\n'}
+[11.617112] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.617257] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.617312] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.617370] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.617431] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp: In member function \xe2\x80\x98virtual void MotorFaultDetectorTest_RapidStateChanges_Test::TestBody()\xe2\x80\x99:\n'}
+[11.617489] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:108:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.617548] (motor_health_monitor) StderrLine: {'line': b'  108 |     detector_->update(1.0, 0.0);\n'}
+[11.617609] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~\n'}
+[11.617670] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.617776] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.617835] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.617891] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.617946] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:110:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.618003] (motor_health_monitor) StderrLine: {'line': b'  110 |     detector_->update(0.5, 0.05);\n'}
+[11.618057] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~~\n'}
+[11.618121] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.618177] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.618235] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.618290] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.618347] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:113:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.618404] (motor_health_monitor) StderrLine: {'line': b'  113 |     detector_->update(1.0, 0.1);\n'}
+[11.618461] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~\n'}
+[11.618516] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.618581] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.618646] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.618708] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.618765] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:116:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.618819] (motor_health_monitor) StderrLine: {'line': b'  116 |     detector_->update(0.5, 0.15);\n'}
+[11.618875] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~~\n'}
+[11.618931] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.618985] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.619039] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.619102] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.619158] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp: In member function \xe2\x80\x98virtual void MotorFaultDetectorTest_BoundaryAtLimit_Test::TestBody()\xe2\x80\x99:\n'}
+[11.619217] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:121:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.619274] (motor_health_monitor) StderrLine: {'line': b'  121 |     detector_->update(0.95, 0.0);\n'}
+[11.619327] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~~\n'}
+[11.619382] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.619443] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.619498] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.619554] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.619607] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:124:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.619666] (motor_health_monitor) StderrLine: {'line': b'  124 |     detector_->update(0.95, 0.2);\n'}
+[11.619719] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~~\n'}
+[11.619773] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.619837] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.619892] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.619947] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.620002] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp: In member function \xe2\x80\x98virtual void MotorFaultDetectorTest_BoundaryJustAboveLimit_Test::TestBody()\xe2\x80\x99:\n'}
+[11.620056] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:129:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.620115] (motor_health_monitor) StderrLine: {'line': b'  129 |     detector_->update(0.9501, 0.0);\n'}
+[11.620171] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~\n'}
+[11.620227] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.620283] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.620336] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.620389] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.620445] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_fault_detector.cpp:132:22: error: no matching function for call to \xe2\x80\x98motor_health_monitor::MotorFaultDetector::update(double, double)\xe2\x80\x99\n'}
+[11.620502] (motor_health_monitor) StderrLine: {'line': b'  132 |     detector_->update(0.9501, 0.2);\n'}
+[11.620557] (motor_health_monitor) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~\n'}
+[11.620614] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note: candidate: \xe2\x80\x98void motor_health_monitor::MotorFaultDetector::update(double)\xe2\x80\x99\n'}
+[11.620671] (motor_health_monitor) StderrLine: {'line': b'   35 |     void update(double current_time) {\n'}
+[11.620724] (motor_health_monitor) StderrLine: {'line': b'      |          ^~~~~~\n'}
+[11.620777] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_fault_detector.hpp:35:10: note:   candidate expects 1 argument, 2 provided\n'}
+[11.625814] (-) TimerEvent: {}
+[11.725973] (-) TimerEvent: {}
+[11.826190] (-) TimerEvent: {}
+[11.847018] (motor_health_monitor) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/test_motor_fault_detector.dir/build.make:76: CMakeFiles/test_motor_fault_detector.dir/test/test_motor_fault_detector.cpp.o] Error 1\n'}
+[11.847446] (motor_health_monitor) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:245: CMakeFiles/test_motor_fault_detector.dir/all] Error 2\n'}
+[11.847578] (motor_health_monitor) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[11.926303] (-) TimerEvent: {}
+[12.002991] (motor_health_monitor) StdoutLine: {'line': b'[ 84%] Linking CXX executable test_velocity_diff_controller\n'}
+[12.026455] (-) TimerEvent: {}
+[12.038735] (motor_health_monitor) StdoutLine: {'line': b'[ 92%] Linking CXX executable test_cmd_odom_sync\n'}
+[12.126612] (-) TimerEvent: {}
+[12.226903] (-) TimerEvent: {}
+[12.327100] (motor_health_monitor) StdoutLine: {'line': b'[ 92%] Built target test_velocity_diff_controller\n'}
+[12.327290] (-) TimerEvent: {}
+[12.408460] (motor_health_monitor) StdoutLine: {'line': b'[ 92%] Built target test_cmd_odom_sync\n'}
+[12.409779] (motor_health_monitor) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[12.412462] (motor_health_monitor) CommandEnded: {'returncode': 2}
+[12.428960] (-) TimerEvent: {}
+[12.432835] (motor_health_monitor) JobEnded: {'identifier': 'motor_health_monitor', 'rc': 2}
+[12.443426] (-) EventReactorShutdown: {}

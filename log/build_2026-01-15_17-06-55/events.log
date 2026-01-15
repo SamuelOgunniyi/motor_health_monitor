@@ -1,0 +1,173 @@
+[0.000000] (-) TimerEvent: {}
+[0.000344] (motor_health_monitor) JobQueued: {'identifier': 'motor_health_monitor', 'dependencies': OrderedDict()}
+[0.000386] (motor_health_monitor) JobStarted: {'identifier': 'motor_health_monitor'}
+[0.005386] (motor_health_monitor) JobProgress: {'identifier': 'motor_health_monitor', 'progress': 'cmake'}
+[0.006534] (motor_health_monitor) JobProgress: {'identifier': 'motor_health_monitor', 'progress': 'build'}
+[0.006559] (motor_health_monitor) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor', '--', '-j28', '-l28'], 'cwd': '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/sogu/Personal/motor_health_monitor', 'KDE_FULL_SESSION': 'true', 'CURSOR_EXTENSION_HOST_ROLE': 'agent-exec', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'USER': 'sogu', 'PAM_KWALLET5_LOGIN': '/run/user/1000/kwallet5.socket', 'VSCODE_NLS_CONFIG': '{"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"/usr/share/cursor/resources/app/out/nls.messages.json","locale":"en-us","availableLanguages":{}}', 'QT_SCREEN_SCALE_FACTORS': 'eDP-1=2;DP-1=2;HDMI-1=2;DP-1-1=2;DP-1-2=2;DP-1-3=2;HDMI-1-0=2;DP-1-0=2;DP-1-1=2;DP-1-2=2;', 'XDG_SEAT': 'seat0', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'SSH_AGENT_PID': '3311', 'XDG_SESSION_TYPE': 'x11', 'KWIN_FORCE_SW_CURSOR': '1', 'XCURSOR_SIZE': '24', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/sogu', 'CHROME_DESKTOP': 'cursor.desktop', 'KDE_APPLICATIONS_AS_SCOPE': '1', 'OLDPWD': '/home/sogu/Personal/motor_health_monitor', 'DESKTOP_SESSION': 'plasma', 'VSCODE_IPC_HOOK': '/run/user/1000/vscode-6c7a1091-2.3.-main.sock', 'ROS_PYTHON_VERSION': '3', 'GTK_RC_FILES': '/etc/gtk/gtkrc:/home/sogu/.gtkrc:/home/sogu/.config/gtkrc', 'GTK_MODULES': 'gail:atk-bridge', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'SDL_IM_MODULE': 'maliit', 'KDE_SESSION_VERSION': '5', 'MANAGERPID': '3212', 'SYSTEMD_EXEC_PID': '3402', 'SSH_ASKPASS': '/usr/bin/ksshaskpass', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873', 'VSCODE_CRASH_REPORTER_PROCESS_TYPE': 'extensionHost', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'maliit', 'LOGNAME': 'sogu', 'FORCE_COLOR': '0', '__GL_THREADED_OPTIMIZATIONS': '0', 'QT_AUTO_SCREEN_SCALE_FACTOR': '0', 'JOURNAL_STREAM': '9:20026', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/background.slice/plasma-kglobalaccel.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'TERM': 'dumb', 'EVERYSPHERE_RIPGREP_PATH': '/usr/share/cursor/resources/app/node_modules/@vscode/ripgrep/bin/rg', 'XDG_SESSION_ID': '6', 'KDE_SYSTEMD_LAUNCHER': '0', 'COMPOSER_NO_INTERACTION': '1', 'GTK2_RC_FILES': '/etc/gtk-2.0/gtkrc:/home/sogu/.gtkrc-2.0:/home/sogu/.config/gtkrc-2.0', 'PATH': '/home/sogu/.local/bin:/home/sogu/.local/bin:/home/sogu/.local/bin:/opt/ros/jazzy/bin:/home/sogu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'INVOCATION_ID': '0e0f10bbf47942cd988d43a866fd9f7f', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session1', 'VSCODE_PROCESS_TITLE': 'extension-host (agent-exec) [1-3]', 'XDG_RUNTIME_DIR': '/run/user/1000', 'XCURSOR_THEME': 'capitaine-cursors', 'GDK_BACKEND': 'x11', 'CURSOR_AGENT': '1', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'KDE', 'XDG_SESSION_DESKTOP': 'KDE', 'XAUTHORITY': '/tmp/xauth_nLriuT', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SBX_CHROME_API_RQ': '1', 'CURSOR_TRACE_ID': 'deb51864dbcf47be9b81541216d796c9', 'SSH_AUTH_SOCK': '/tmp/ssh-L1LlkJU05yno/agent.3260', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'CURSOR_CLI_MODE': 'local', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'KDE', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:573b2858-04a1-426b-ba27-ebf132c8b6c5', 'QT_ACCESSIBILITY': '1', 'CURSOR_CLI': 'ELECTRON_RUN_AS_NODE=1 "/usr/share/cursor/bin/../cursor" "/usr/share/cursor/bin/../resources/app/out/cli.js"', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'maliit', 'XDG_VTNR': '2', 'PWD': '/home/sogu/Personal/motor_health_monitor/build/motor_health_monitor', 'VSCODE_CLI': '1', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/home/sogu/.config/kdedefaults:/etc/xdg/xdg-plasma:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings', 'VSCODE_CODE_CACHE_PATH': '/home/sogu/.config/Cursor/CachedData/cf8353edc265f5e46b798bfb276861d0bf3bf120', 'CLUTTER_IM_MODULE': 'maliit', 'XDG_DATA_DIRS': '/usr/share/plasma:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'KDE_SESSION_UID': '1000', 'COLCON': '1', '_ZO_DOCTOR': '0', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'SANDBOX_LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'ELECTRON_NO_ATTACH_CONSOLE': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'VSCODE_PID': '233616'}), 'shell': False}
+[0.066746] (motor_health_monitor) StdoutLine: {'line': b'[ 13%] Built target gtest\n'}
+[0.067720] (motor_health_monitor) StdoutLine: {'line': b'[ 26%] Built target gtest_main\n'}
+[0.077273] (motor_health_monitor) StdoutLine: {'line': b'[ 33%] Building CXX object CMakeFiles/motor_health_component.dir/src/motor_health_node.cpp.o\n'}
+[0.099835] (-) TimerEvent: {}
+[0.200079] (-) TimerEvent: {}
+[0.300272] (-) TimerEvent: {}
+[0.400562] (-) TimerEvent: {}
+[0.500783] (-) TimerEvent: {}
+[0.600988] (-) TimerEvent: {}
+[0.701236] (-) TimerEvent: {}
+[0.801397] (-) TimerEvent: {}
+[0.901551] (-) TimerEvent: {}
+[1.001768] (-) TimerEvent: {}
+[1.101967] (-) TimerEvent: {}
+[1.202185] (-) TimerEvent: {}
+[1.302401] (-) TimerEvent: {}
+[1.402626] (-) TimerEvent: {}
+[1.502904] (-) TimerEvent: {}
+[1.603118] (-) TimerEvent: {}
+[1.703379] (-) TimerEvent: {}
+[1.803600] (-) TimerEvent: {}
+[1.903813] (-) TimerEvent: {}
+[2.004026] (-) TimerEvent: {}
+[2.104281] (-) TimerEvent: {}
+[2.204461] (-) TimerEvent: {}
+[2.304667] (-) TimerEvent: {}
+[2.404896] (-) TimerEvent: {}
+[2.505112] (-) TimerEvent: {}
+[2.605310] (-) TimerEvent: {}
+[2.705606] (-) TimerEvent: {}
+[2.805836] (-) TimerEvent: {}
+[2.906102] (-) TimerEvent: {}
+[3.006298] (-) TimerEvent: {}
+[3.106524] (-) TimerEvent: {}
+[3.206773] (-) TimerEvent: {}
+[3.306989] (-) TimerEvent: {}
+[3.407225] (-) TimerEvent: {}
+[3.507425] (-) TimerEvent: {}
+[3.607619] (-) TimerEvent: {}
+[3.707828] (-) TimerEvent: {}
+[3.808116] (-) TimerEvent: {}
+[3.908427] (-) TimerEvent: {}
+[4.008601] (-) TimerEvent: {}
+[4.108815] (-) TimerEvent: {}
+[4.209017] (-) TimerEvent: {}
+[4.309234] (-) TimerEvent: {}
+[4.409467] (-) TimerEvent: {}
+[4.509659] (-) TimerEvent: {}
+[4.609865] (-) TimerEvent: {}
+[4.710110] (-) TimerEvent: {}
+[4.810332] (-) TimerEvent: {}
+[4.910542] (-) TimerEvent: {}
+[5.010756] (-) TimerEvent: {}
+[5.110966] (-) TimerEvent: {}
+[5.211186] (-) TimerEvent: {}
+[5.311392] (-) TimerEvent: {}
+[5.411684] (-) TimerEvent: {}
+[5.511883] (-) TimerEvent: {}
+[5.612155] (-) TimerEvent: {}
+[5.712411] (-) TimerEvent: {}
+[5.812608] (-) TimerEvent: {}
+[5.912859] (-) TimerEvent: {}
+[6.013127] (-) TimerEvent: {}
+[6.113312] (-) TimerEvent: {}
+[6.213523] (-) TimerEvent: {}
+[6.313733] (-) TimerEvent: {}
+[6.413956] (-) TimerEvent: {}
+[6.514194] (-) TimerEvent: {}
+[6.585777] (motor_health_monitor) StdoutLine: {'line': b'[ 40%] Linking CXX shared library libmotor_health_component.so\n'}
+[6.614306] (-) TimerEvent: {}
+[6.714534] (-) TimerEvent: {}
+[6.814775] (-) TimerEvent: {}
+[6.870594] (motor_health_monitor) StdoutLine: {'line': b'[ 46%] Built target motor_health_component\n'}
+[6.890957] (motor_health_monitor) StdoutLine: {'line': b'[ 53%] Linking CXX executable test_cmd_odom_sync\n'}
+[6.894386] (motor_health_monitor) StdoutLine: {'line': b'[ 60%] Linking CXX executable test_motor_controller_factory\n'}
+[6.896111] (motor_health_monitor) StdoutLine: {'line': b'[ 73%] Building CXX object CMakeFiles/test_motor_health_node.dir/test/test_motor_health_node.cpp.o\n'}
+[6.896255] (motor_health_monitor) StdoutLine: {'line': b'[ 73%] Linking CXX executable test_motor_fault_detector\n'}
+[6.914877] (-) TimerEvent: {}
+[7.015058] (-) TimerEvent: {}
+[7.086956] (motor_health_monitor) StdoutLine: {'line': b'[ 80%] Built target test_motor_fault_detector\n'}
+[7.095394] (motor_health_monitor) StdoutLine: {'line': b'[ 86%] Built target test_motor_controller_factory\n'}
+[7.115376] (-) TimerEvent: {}
+[7.120894] (motor_health_monitor) StdoutLine: {'line': b'[ 93%] Built target test_cmd_odom_sync\n'}
+[7.215465] (-) TimerEvent: {}
+[7.315612] (-) TimerEvent: {}
+[7.415790] (-) TimerEvent: {}
+[7.515939] (-) TimerEvent: {}
+[7.616089] (-) TimerEvent: {}
+[7.716302] (-) TimerEvent: {}
+[7.816547] (-) TimerEvent: {}
+[7.916800] (-) TimerEvent: {}
+[8.017037] (-) TimerEvent: {}
+[8.117269] (-) TimerEvent: {}
+[8.217451] (-) TimerEvent: {}
+[8.317599] (-) TimerEvent: {}
+[8.335042] (motor_health_monitor) StderrLine: {'line': b'In file included from /opt/ros/jazzy/src/gtest_vendor/include/gtest/gtest-printers.h:122,\n'}
+[8.335247] (motor_health_monitor) StderrLine: {'line': b'                 from /opt/ros/jazzy/src/gtest_vendor/include/gtest/gtest-matchers.h:49,\n'}
+[8.335324] (motor_health_monitor) StderrLine: {'line': b'                 from /opt/ros/jazzy/src/gtest_vendor/include/gtest/internal/gtest-death-test-internal.h:47,\n'}
+[8.335386] (motor_health_monitor) StderrLine: {'line': b'                 from /opt/ros/jazzy/src/gtest_vendor/include/gtest/gtest-death-test.h:43,\n'}
+[8.335445] (motor_health_monitor) StderrLine: {'line': b'                 from /opt/ros/jazzy/src/gtest_vendor/include/gtest/gtest.h:65,\n'}
+[8.335506] (motor_health_monitor) StderrLine: {'line': b'                 from /home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:19:\n'}
+[8.335560] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp: In member function \xe2\x80\x98virtual void MotorHealthNodeTest_UpdateWhenInactiveDoesNothing_Test::TestBody()\xe2\x80\x99:\n'}
+[8.335709] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:45:34: error: \xe2\x80\x98void motor_health_monitor::MotorHealthNode::update()\xe2\x80\x99 is protected within this context\n'}
+[8.335937] (motor_health_monitor) StderrLine: {'line': b'   45 |     ASSERT_NO_THROW(node_->update());\n'}
+[8.336028] (motor_health_monitor) StderrLine: {'line': b'      |                     ~~~~~~~~~~~~~^~\n'}
+[8.336112] (motor_health_monitor) StderrLine: {'line': b'In file included from /home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:23:\n'}
+[8.336202] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_health_node.hpp:62:8: note: declared protected here\n'}
+[8.336285] (motor_health_monitor) StderrLine: {'line': b'   62 |   void update();\n'}
+[8.336359] (motor_health_monitor) StderrLine: {'line': b'      |        ^~~~~~\n'}
+[8.336437] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp: In member function \xe2\x80\x98virtual void MotorHealthNodeTest_UpdateWhenConfigured_Test::TestBody()\xe2\x80\x99:\n'}
+[8.336514] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:54:34: error: \xe2\x80\x98void motor_health_monitor::MotorHealthNode::update()\xe2\x80\x99 is protected within this context\n'}
+[8.336646] (motor_health_monitor) StderrLine: {'line': b'   54 |     ASSERT_NO_THROW(node_->update());\n'}
+[8.336727] (motor_health_monitor) StderrLine: {'line': b'      |                     ~~~~~~~~~~~~~^~\n'}
+[8.336802] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_health_node.hpp:62:8: note: declared protected here\n'}
+[8.336879] (motor_health_monitor) StderrLine: {'line': b'   62 |   void update();\n'}
+[8.336958] (motor_health_monitor) StderrLine: {'line': b'      |        ^~~~~~\n'}
+[8.337035] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp: In member function \xe2\x80\x98virtual void MotorHealthNodeTest_UpdateWhenActivated_Test::TestBody()\xe2\x80\x99:\n'}
+[8.337110] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:65:34: error: \xe2\x80\x98void motor_health_monitor::MotorHealthNode::update()\xe2\x80\x99 is protected within this context\n'}
+[8.337193] (motor_health_monitor) StderrLine: {'line': b'   65 |     ASSERT_NO_THROW(node_->update());\n'}
+[8.337344] (motor_health_monitor) StderrLine: {'line': b'      |                     ~~~~~~~~~~~~~^~\n'}
+[8.337390] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_health_node.hpp:62:8: note: declared protected here\n'}
+[8.337429] (motor_health_monitor) StderrLine: {'line': b'   62 |   void update();\n'}
+[8.337464] (motor_health_monitor) StderrLine: {'line': b'      |        ^~~~~~\n'}
+[8.337498] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp: In member function \xe2\x80\x98virtual void MotorHealthNodeTest_UpdateHandlesNoMessages_Test::TestBody()\xe2\x80\x99:\n'}
+[8.337535] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:75:34: error: \xe2\x80\x98void motor_health_monitor::MotorHealthNode::update()\xe2\x80\x99 is protected within this context\n'}
+[8.337578] (motor_health_monitor) StderrLine: {'line': b'   75 |     ASSERT_NO_THROW(node_->update());\n'}
+[8.337611] (motor_health_monitor) StderrLine: {'line': b'      |                     ~~~~~~~~~~~~~^~\n'}
+[8.337644] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_health_node.hpp:62:8: note: declared protected here\n'}
+[8.337678] (motor_health_monitor) StderrLine: {'line': b'   62 |   void update();\n'}
+[8.337711] (motor_health_monitor) StderrLine: {'line': b'      |        ^~~~~~\n'}
+[8.338037] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp: In member function \xe2\x80\x98virtual void MotorHealthNodeTest_MultipleUpdates_Test::TestBody()\xe2\x80\x99:\n'}
+[8.338128] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:84:34: error: \xe2\x80\x98void motor_health_monitor::MotorHealthNode::update()\xe2\x80\x99 is protected within this context\n'}
+[8.338187] (motor_health_monitor) StderrLine: {'line': b'   84 |     ASSERT_NO_THROW(node_->update());\n'}
+[8.338226] (motor_health_monitor) StderrLine: {'line': b'      |                     ~~~~~~~~~~~~~^~\n'}
+[8.338269] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_health_node.hpp:62:8: note: declared protected here\n'}
+[8.338306] (motor_health_monitor) StderrLine: {'line': b'   62 |   void update();\n'}
+[8.338345] (motor_health_monitor) StderrLine: {'line': b'      |        ^~~~~~\n'}
+[8.338505] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:86:34: error: \xe2\x80\x98void motor_health_monitor::MotorHealthNode::update()\xe2\x80\x99 is protected within this context\n'}
+[8.338594] (motor_health_monitor) StderrLine: {'line': b'   86 |     ASSERT_NO_THROW(node_->update());\n'}
+[8.338637] (motor_health_monitor) StderrLine: {'line': b'      |                     ~~~~~~~~~~~~~^~\n'}
+[8.338675] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_health_node.hpp:62:8: note: declared protected here\n'}
+[8.338716] (motor_health_monitor) StderrLine: {'line': b'   62 |   void update();\n'}
+[8.338750] (motor_health_monitor) StderrLine: {'line': b'      |        ^~~~~~\n'}
+[8.338784] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:88:34: error: \xe2\x80\x98void motor_health_monitor::MotorHealthNode::update()\xe2\x80\x99 is protected within this context\n'}
+[8.338818] (motor_health_monitor) StderrLine: {'line': b'   88 |     ASSERT_NO_THROW(node_->update());\n'}
+[8.338855] (motor_health_monitor) StderrLine: {'line': b'      |                     ~~~~~~~~~~~~~^~\n'}
+[8.338888] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_health_node.hpp:62:8: note: declared protected here\n'}
+[8.338922] (motor_health_monitor) StderrLine: {'line': b'   62 |   void update();\n'}
+[8.338955] (motor_health_monitor) StderrLine: {'line': b'      |        ^~~~~~\n'}
+[8.339347] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp: In member function \xe2\x80\x98virtual void MotorHealthNodeTest_UpdateAfterDeactivate_Test::TestBody()\xe2\x80\x99:\n'}
+[8.339438] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/test/test_motor_health_node.cpp:98:34: error: \xe2\x80\x98void motor_health_monitor::MotorHealthNode::update()\xe2\x80\x99 is protected within this context\n'}
+[8.339480] (motor_health_monitor) StderrLine: {'line': b'   98 |     ASSERT_NO_THROW(node_->update());\n'}
+[8.339519] (motor_health_monitor) StderrLine: {'line': b'      |                     ~~~~~~~~~~~~~^~\n'}
+[8.339584] (motor_health_monitor) StderrLine: {'line': b'/home/sogu/Personal/motor_health_monitor/include/motor_health_monitor/motor_health_node.hpp:62:8: note: declared protected here\n'}
+[8.339620] (motor_health_monitor) StderrLine: {'line': b'   62 |   void update();\n'}
+[8.339655] (motor_health_monitor) StderrLine: {'line': b'      |        ^~~~~~\n'}
+[8.417698] (-) TimerEvent: {}
+[8.517892] (-) TimerEvent: {}
+[8.618083] (-) TimerEvent: {}
+[8.718275] (-) TimerEvent: {}
+[8.818424] (-) TimerEvent: {}
+[8.871993] (motor_health_monitor) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/test_motor_health_node.dir/build.make:76: CMakeFiles/test_motor_health_node.dir/test/test_motor_health_node.cpp.o] Error 1\n'}
+[8.872359] (motor_health_monitor) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:275: CMakeFiles/test_motor_health_node.dir/all] Error 2\n'}
+[8.872765] (motor_health_monitor) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[8.874564] (motor_health_monitor) CommandEnded: {'returncode': 2}
+[8.889667] (motor_health_monitor) JobEnded: {'identifier': 'motor_health_monitor', 'rc': 2}
+[8.900207] (-) EventReactorShutdown: {}

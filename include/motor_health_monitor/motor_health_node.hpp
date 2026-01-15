@@ -58,10 +58,22 @@ public:
   rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn
   on_shutdown(const rclcpp_lifecycle::State &);
 
+protected:
+  void update();
+
 private:
   void cmdCallback(const geometry_msgs::msg::Twist::SharedPtr msg);
   void odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg);
-  void update();
+
+  std::pair<bool, bool> checkStaleData(
+    std::chrono::steady_clock::time_point current_time) const;
+  std::tuple<bool, std::string, double> updateFaultDetection(
+    std::chrono::steady_clock::time_point current_time);
+  std::pair<int8_t, std::string> determineDiagnosticLevel(
+    bool fault, const std::string& fault_reason, bool cmd_stale, bool odom_stale) const;
+  diagnostic_msgs::msg::DiagnosticStatus buildDiagnosticStatus(
+    bool fault, double feedback_value, bool cmd_stale, bool odom_stale,
+    std::chrono::steady_clock::time_point current_time) const;
 
   rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr cmd_sub_;
   rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odom_sub_;

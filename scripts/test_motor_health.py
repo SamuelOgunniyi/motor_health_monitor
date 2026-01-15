@@ -15,12 +15,11 @@
 # limitations under the License.
 
 """
-Test script for motor_health_monitor node.
+Integration test script for motor_health_monitor node.
 
-This script:
-1. Publishes test cmd_vel and odom messages
-2. Subscribes to diagnostics topic and prints messages
-3. Simulates various scenarios (normal operation, sync issues, faults)
+Publishes test cmd_vel and odom messages, subscribes to diagnostics, and simulates
+various scenarios (normal operation, sync issues, faults). More comprehensive than
+the bash script, useful for automated testing and CI/CD pipelines.
 """
 
 from diagnostic_msgs.msg import DiagnosticArray

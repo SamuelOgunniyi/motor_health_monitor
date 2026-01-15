@@ -31,11 +31,13 @@ public:
         rclcpp_lifecycle::LifecycleNode* node,
         const std::string& topic_name,
         const std::string& message_type_override = "",
-        const std::string& field_path_override = "") override {
+        const std::string& field_path_override = "",
+        int queue_depth = 1) override {
         (void)node;
         (void)topic_name;
         (void)message_type_override;
         (void)field_path_override;
+        (void)queue_depth;
         return true;
     }
 

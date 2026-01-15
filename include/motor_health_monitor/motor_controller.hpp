@@ -31,7 +31,8 @@ public:
         rclcpp_lifecycle::LifecycleNode* node,
         const std::string& topic_name,
         const std::string& message_type_override = "",
-        const std::string& field_path_override = "") = 0;
+        const std::string& field_path_override = "",
+        int queue_depth = 1) = 0;
 
     virtual void cleanup() = 0;
 

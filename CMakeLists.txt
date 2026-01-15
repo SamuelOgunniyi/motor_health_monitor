@@ -62,6 +62,25 @@ if(BUILD_TESTING)
   ament_add_gtest(test_motor_controller_factory test/test_motor_controller_factory.cpp)
   target_link_libraries(test_motor_controller_factory motor_health_component)
   target_include_directories(test_motor_controller_factory PUBLIC include)
+
+  # Test for MotorHealthNode
+  ament_add_gtest(test_motor_health_node test/test_motor_health_node.cpp)
+  target_link_libraries(test_motor_health_node motor_health_component)
+  target_include_directories(test_motor_health_node PUBLIC include)
+  ament_target_dependencies(test_motor_health_node
+    rclcpp
+    rclcpp_lifecycle
+  )
+
+  # Integration test with real controller
+  ament_add_gtest(test_integration_controller test/test_integration_controller.cpp)
+  target_link_libraries(test_integration_controller motor_health_component)
+  target_include_directories(test_integration_controller PUBLIC include)
+  ament_target_dependencies(test_integration_controller
+    rclcpp
+    rclcpp_lifecycle
+    std_msgs
+  )
 endif()
 
 ament_package()

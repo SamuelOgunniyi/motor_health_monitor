@@ -38,7 +38,8 @@ public:
         rclcpp_lifecycle::LifecycleNode* node,
         const std::string& topic_name,
         const std::string& message_type_override = "",
-        const std::string& field_path_override = "") override {
+        const std::string& field_path_override = "",
+        int queue_depth = 1) override {
         if (!node) {
             return false;
         }
@@ -71,10 +72,14 @@ public:
             return false;
         }
 
+        rclcpp::QoS motor_qos(queue_depth);
+        motor_qos.durability(rclcpp::DurabilityPolicy::Volatile);
+        motor_qos.reliability(rclcpp::ReliabilityPolicy::BestEffort);
+
         subscription_ = node_->create_generic_subscription(
             topic_name,
             msg_type,
-            rclcpp::QoS(1),
+            motor_qos,
             [this](std::shared_ptr<rclcpp::SerializedMessage> msg) {
                 this->messageCallback(msg);
             }
